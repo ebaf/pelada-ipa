@@ -91,7 +91,7 @@ export function ShareMatchButton({
         </button>
       ) : (
         <button type="button" onClick={() => setOpen(true)} className="btn btn-ghost btn-sm">
-          📤 Compartilhar
+          📤
         </button>
       )}
 

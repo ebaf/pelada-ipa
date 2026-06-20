@@ -492,10 +492,10 @@ export function MatchEditor({
       ) : (
         <div className="mt-3 flex flex-wrap gap-2">
           <button className="btn btn-ghost btn-sm" onClick={openAdd} disabled={pending}>
-            ⚽ Adicionar gol
+            ⚽
           </button>
           <button className="btn btn-ghost btn-sm" onClick={openExtForm} disabled={pending}>
-            👤 Externo
+            👤
           </button>
           {match.finished && (
             <ShareMatchButton text={formatMatchForWhatsApp(match, champ)} />
