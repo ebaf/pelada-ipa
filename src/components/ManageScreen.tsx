@@ -10,10 +10,10 @@ import {
   resetKnockouts,
   deleteChampionship,
 } from "@/lib/actions";
-import { formatDateLong } from "@/lib/format";
 import { TeamSetup } from "@/components/TeamSetup";
 import { MatchEditor } from "@/components/MatchEditor";
 import { StandingsTable } from "@/components/StandingsTable";
+import {formatDate} from "@/lib/format";
 
 type Player = { id: string; name: string };
 
@@ -58,7 +58,7 @@ export function ManageScreen({
             ← Painel da pelada
           </Link>
           <h1 className="mt-1 text-2xl font-extrabold capitalize">
-            Gerenciar · {championship.name || formatDateLong(championship.date)}
+            Gerenciar · {championship.name || formatDate(championship.date)}
           </h1>
         </div>
       </div>
