@@ -42,8 +42,8 @@ function GroupMatch({
       </div>
       {(homeGoals.length > 0 || awayGoals.length > 0) && (
         <div className="mt-2 grid grid-cols-2 gap-2 text-xs text-muted">
-          <div className="text-right">{homeGoals.map(goalLabel).join(", ")}</div>
-          <div>{awayGoals.map(goalLabel).join(", ")}</div>
+          <div className="text-right">{homeGoals.map((g, i) => <div key={i}>{goalLabel(g)}</div>)}</div>
+          <div>{awayGoals.map((g, i) => <div key={i}>{goalLabel(g)}</div>)}</div>
         </div>
       )}
       {m.finished && (
