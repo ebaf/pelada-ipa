@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { listChampionships, getHomeRanking } from "@/lib/queries";
-import { formatDateLong } from "@/lib/format";
+import { formatDate } from "@/lib/format";
 import { RankingTable } from "@/components/RankingTable";
 import { TeamBadge } from "@/components/TeamBadge";
 import { NotaInfo } from "@/components/NotaInfo";
@@ -53,11 +53,11 @@ export default async function HomePage() {
                 >
                   <div className="flex-1">
                     <div className="font-semibold capitalize">
-                      {c.name || formatDateLong(c.date)}
+                      {c.name || formatDate(c.date)}
                     </div>
                     {c.name && (
                       <div className="text-xs capitalize text-muted">
-                        {formatDateLong(c.date)}
+                        {formatDate(c.date)}
                       </div>
                     )}
                     <div className="mt-1.5">

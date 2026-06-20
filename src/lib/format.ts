@@ -14,31 +14,6 @@ export const STAGE_SHORT: Record<string, string> = {
   FINAL: "Final",
 };
 
-const WEEKDAYS = [
-  "domingo",
-  "segunda-feira",
-  "terça-feira",
-  "quarta-feira",
-  "quinta-feira",
-  "sexta-feira",
-  "sábado",
-];
-
-const MONTHS = [
-  "jan",
-  "fev",
-  "mar",
-  "abr",
-  "mai",
-  "jun",
-  "jul",
-  "ago",
-  "set",
-  "out",
-  "nov",
-  "dez",
-];
-
 function asDate(d: Date | string): Date {
   return typeof d === "string" ? new Date(d) : d;
 }
@@ -50,12 +25,6 @@ export function formatDate(d: Date | string): string {
   const day = String(date.getUTCDate()).padStart(2, "0");
   const month = String(date.getUTCMonth() + 1).padStart(2, "0");
   return `${day}/${month}/${date.getUTCFullYear()}`;
-}
-
-export function formatDateLong(d: Date | string): string {
-  const date = asDate(d);
-  const wd = WEEKDAYS[date.getUTCDay()];
-  return `${wd}, ${date.getUTCDate()} de ${MONTHS[date.getUTCMonth()]} de ${date.getUTCFullYear()}`;
 }
 
 export function formatNota(n: number): string {

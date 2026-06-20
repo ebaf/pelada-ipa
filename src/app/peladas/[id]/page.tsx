@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getChampionshipView, MatchView } from "@/lib/queries";
-import { formatDateLong, formatNota } from "@/lib/format";
+import { formatDate, formatNota } from "@/lib/format";
 import { totalGoals } from "@/lib/rating";
 import { StandingsTable } from "@/components/StandingsTable";
 import { Bracket } from "@/components/Bracket";
@@ -91,10 +91,10 @@ export default async function PeladaDashboard({
             ← Início
           </Link>
           <h1 className="mt-1 text-2xl font-extrabold capitalize">
-            {championship.name || formatDateLong(championship.date)}
+            {championship.name || formatDate(championship.date)}
           </h1>
           {championship.name && (
-            <p className="text-sm capitalize text-muted">{formatDateLong(championship.date)}</p>
+            <p className="text-sm capitalize text-muted">{formatDate(championship.date)}</p>
           )}
         </div>
         <Link href={`/peladas/${id}/gerenciar`} className="btn btn-ghost btn-sm shrink-0">
