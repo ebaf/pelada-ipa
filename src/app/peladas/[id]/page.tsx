@@ -28,29 +28,34 @@ function GroupMatch({
   const homeGoals = m.goals.filter((g) => g.teamId === m.homeTeamId);
   const awayGoals = m.goals.filter((g) => g.teamId === m.awayTeamId);
   return (
-    <div className="card-2 p-3">
-      <div className="flex items-center justify-center gap-3">
-        <span className="flex flex-1 items-center justify-end gap-2 font-semibold">
-          Time {m.homeLabel} <TeamBadge label={m.homeLabel} className="!h-6 !w-6 text-xs" />
-        </span>
-        <span className="rounded-lg bg-bg px-3 py-1 text-lg font-extrabold tabular-nums">
-          {m.finished ? `${m.homeScore} : ${m.awayScore}` : "– : –"}
-        </span>
-        <span className="flex flex-1 items-center gap-2 font-semibold">
-          <TeamBadge label={m.awayLabel} className="!h-6 !w-6 text-xs" /> Time {m.awayLabel}
-        </span>
+    <div>
+      <div className="mb-1.5 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-muted">
+        {m.round != null ? `Jogo ${m.round}` : "Jogo"}
+        {m.finished && (
+          <span className="ml-auto">
+            <ShareMatchButton text={formatMatchForWhatsApp(m, champ)} trigger="icon" />
+          </span>
+        )}
       </div>
-      {(homeGoals.length > 0 || awayGoals.length > 0) && (
-        <div className="mt-2 grid grid-cols-2 gap-2 text-xs text-muted">
-          <div className="text-right">{homeGoals.map((g, i) => <div key={i}>{goalLabel(g)}</div>)}</div>
-          <div>{awayGoals.map((g, i) => <div key={i}>{goalLabel(g)}</div>)}</div>
+      <div className="card-2 p-3">
+        <div className="flex items-center justify-center gap-3">
+          <span className="flex flex-1 items-center justify-end gap-2 font-semibold">
+            Time {m.homeLabel} <TeamBadge label={m.homeLabel} className="!h-6 !w-6 text-xs" />
+          </span>
+          <span className="rounded-lg bg-bg px-3 py-1 text-lg font-extrabold tabular-nums">
+            {m.finished ? `${m.homeScore} : ${m.awayScore}` : "– : –"}
+          </span>
+          <span className="flex flex-1 items-center gap-2 font-semibold">
+            <TeamBadge label={m.awayLabel} className="!h-6 !w-6 text-xs" /> Time {m.awayLabel}
+          </span>
         </div>
-      )}
-      {m.finished && (
-        <div className="mt-2 flex justify-end border-t border-border pt-2">
-          <ShareMatchButton text={formatMatchForWhatsApp(m, champ)} />
-        </div>
-      )}
+        {(homeGoals.length > 0 || awayGoals.length > 0) && (
+          <div className="mt-2 grid grid-cols-2 gap-2 text-xs text-muted">
+            <div className="text-right">{homeGoals.map((g, i) => <div key={i}>{goalLabel(g)}</div>)}</div>
+            <div>{awayGoals.map((g, i) => <div key={i}>{goalLabel(g)}</div>)}</div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
@@ -133,7 +138,7 @@ export default async function PeladaDashboard({
 
       <section>
         <h2 className="mb-3 text-lg font-bold">Jogos · pontos corridos</h2>
-        <div className="space-y-2">
+        <div className="space-y-4">
           {groupMatches.length === 0 ? (
             <p className="card p-5 text-center text-muted">Times ainda não definidos.</p>
           ) : (

@@ -6,47 +6,9 @@ import { formatMatchForWhatsApp } from "@/lib/share";
 
 type Champ = { name: string | null; date: Date | string };
 
-function Side({
-  label,
-  teamId,
-  score,
-  pens,
-  showPens,
-  winnerTeamId,
-  finished,
-}: {
-  label: string;
-  teamId: string;
-  score: number;
-  pens: number | null;
-  showPens: boolean;
-  winnerTeamId: string | null;
-  finished: boolean;
-}) {
-  const isWinner = finished && winnerTeamId === teamId;
-  const isLoser = finished && winnerTeamId !== null && winnerTeamId !== teamId;
-  return (
-    <div
-      className={`flex items-center gap-2 px-3 py-2 ${
-        isLoser ? "opacity-55" : ""
-      }`}
-    >
-      <TeamBadge label={label} className="!h-6 !w-6 text-xs" />
-      <span className={`flex-1 text-sm ${isWinner ? "font-bold" : "font-medium"}`}>
-        Time {label}
-      </span>
-      {showPens && (
-        <span className="text-xs text-muted tabular-nums">({pens ?? 0} pên)</span>
-      )}
-      <span
-        className={`w-6 text-center text-lg tabular-nums ${
-          isWinner ? "font-extrabold text-primary" : "font-semibold"
-        }`}
-      >
-        {finished || score > 0 ? score : "–"}
-      </span>
-    </div>
-  );
+function goalLabel(g: { scorerName: string | null; isOwnGoal: boolean; isPenalty: boolean }) {
+  const suffix = g.isOwnGoal ? " (gc)" : g.isPenalty ? " (pên)" : "";
+  return `${g.scorerName ?? "?"}${suffix}`;
 }
 
 function KnockoutCard({
@@ -66,8 +28,11 @@ function KnockoutCard({
       : highlight === "bronze"
         ? "border-bronze/50"
         : "border-border";
+  const homeGoals = match?.goals.filter((g) => g.teamId === match.homeTeamId) ?? [];
+  const awayGoals = match?.goals.filter((g) => g.teamId === match.awayTeamId) ?? [];
+  const showPens = match?.finished && match.homeScore === match.awayScore;
   return (
-    <div className="flex-1">
+    <div>
       <div className="mb-1.5 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-muted">
         {highlight === "gold" && <span>🏆</span>}
         {highlight === "bronze" && <span>🥉</span>}
@@ -78,30 +43,36 @@ function KnockoutCard({
           </span>
         )}
       </div>
-      <div className={`card-2 divide-y divide-border overflow-hidden ${border}`}>
+      <div className={`card-2 p-3 ${border}`}>
         {match ? (
           <>
-            <Side
-              label={match.homeLabel}
-              teamId={match.homeTeamId}
-              score={match.homeScore}
-              pens={match.homePens}
-              showPens={match.homeScore === match.awayScore}
-              winnerTeamId={match.winnerTeamId}
-              finished={match.finished}
-            />
-            <Side
-              label={match.awayLabel}
-              teamId={match.awayTeamId}
-              score={match.awayScore}
-              pens={match.awayPens}
-              showPens={match.homeScore === match.awayScore}
-              winnerTeamId={match.winnerTeamId}
-              finished={match.finished}
-            />
+            <div className="flex items-center justify-center gap-3">
+              <span className="flex flex-1 items-center justify-end gap-2 font-semibold">
+                Time {match.homeLabel} <TeamBadge label={match.homeLabel} className="!h-6 !w-6 text-xs" />
+              </span>
+              <div className="text-center">
+                <span className="rounded-lg bg-bg px-3 py-1 text-lg font-extrabold tabular-nums">
+                  {match.finished ? `${match.homeScore} : ${match.awayScore}` : "– : –"}
+                </span>
+                {showPens && (
+                  <div className="mt-0.5 text-xs text-muted tabular-nums">
+                    ({match.homePens ?? 0} × {match.awayPens ?? 0} pên)
+                  </div>
+                )}
+              </div>
+              <span className="flex flex-1 items-center gap-2 font-semibold">
+                <TeamBadge label={match.awayLabel} className="!h-6 !w-6 text-xs" /> Time {match.awayLabel}
+              </span>
+            </div>
+            {(homeGoals.length > 0 || awayGoals.length > 0) && (
+              <div className="mt-2 grid grid-cols-2 gap-2 text-xs text-muted">
+                <div className="text-right">{homeGoals.map((g, i) => <div key={i}>{goalLabel(g)}</div>)}</div>
+                <div>{awayGoals.map((g, i) => <div key={i}>{goalLabel(g)}</div>)}</div>
+              </div>
+            )}
           </>
         ) : (
-          <div className="px-3 py-4 text-center text-sm text-muted">A definir</div>
+          <div className="py-4 text-center text-sm text-muted">A definir</div>
         )}
       </div>
     </div>
@@ -123,14 +94,10 @@ export function Bracket({
 }) {
   return (
     <div className="space-y-4">
-      <div className="flex gap-3">
-        <KnockoutCard match={sf1} title={STAGE_LABEL.SF1} champ={champ} />
-        <KnockoutCard match={sf2} title={STAGE_LABEL.SF2} champ={champ} />
-      </div>
-      <div className="flex gap-3">
-        <KnockoutCard match={final} title="Final" highlight="gold" champ={champ} />
-        <KnockoutCard match={third} title="3º lugar" highlight="bronze" champ={champ} />
-      </div>
+      <KnockoutCard match={sf1} title={STAGE_LABEL.SF1} champ={champ} />
+      <KnockoutCard match={sf2} title={STAGE_LABEL.SF2} champ={champ} />
+      <KnockoutCard match={third} title="3º lugar" highlight="bronze" champ={champ} />
+      <KnockoutCard match={final} title="Final" highlight="gold" champ={champ} />
     </div>
   );
 }
