@@ -29,13 +29,6 @@ export function StandingsTable({
             <tr key={r.teamId} className="border-t border-border">
               <td className="px-2 py-2.5 font-bold tabular-nums">
                 <span className="flex items-center gap-1.5">
-                  {qualifyHint && (
-                    <span
-                      className={`inline-block h-2 w-2 rounded-full ${
-                        r.rank <= 4 ? "bg-primary" : "bg-transparent"
-                      }`}
-                    />
-                  )}
                   {r.rank}
                 </span>
               </td>
