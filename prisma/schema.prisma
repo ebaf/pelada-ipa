@@ -1,0 +1,122 @@
+// Pelada IPA — modelo de dados
+// Campeonato (pelada) de um dia: 4 times (A/B/C/D), fase de grupos (pontos
+// corridos) + eliminatórias (SF1, SF2, disputa de 3º, final).
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Player {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  createdAt DateTime @default(now())
+
+  memberships   TeamPlayer[]
+  matchSlots    MatchPlayer[]
+  goalsScored   GoalEvent[]  @relation("scorer")
+  goalsAssisted GoalEvent[]  @relation("assist")
+}
+
+model Championship {
+  id        String   @id @default(cuid())
+  name      String?
+  date      DateTime
+  createdAt DateTime @default(now())
+
+  teams   Team[]
+  matches Match[]
+}
+
+model Team {
+  id      String  @id @default(cuid())
+  label   String // "A" | "B" | "C" | "D"
+  flagUrl String?
+  crestUrl String?
+
+  championship   Championship @relation(fields: [championshipId], references: [id], onDelete: Cascade)
+  championshipId String
+
+  members     TeamPlayer[]
+  matchSlots  MatchPlayer[]
+  homeMatches Match[]      @relation("home")
+  awayMatches Match[]      @relation("away")
+  goals       GoalEvent[]  @relation("benefit")
+
+  @@unique([championshipId, label])
+}
+
+model TeamPlayer {
+  id           String  @id @default(cuid())
+  isGoalkeeper Boolean @default(false)
+  slot         Int? // ordem 1..6 dentro do time
+
+  team     Team   @relation(fields: [teamId], references: [id], onDelete: Cascade)
+  teamId   String
+  player   Player @relation(fields: [playerId], references: [id], onDelete: Cascade)
+  playerId String
+
+  @@unique([teamId, playerId])
+}
+
+// Jogador que participou de uma partida específica por um time diferente do seu
+// elenco fixo (goleiro volante, substituto, reforço). Override de TeamPlayer
+// para essa partida: W/D/L é creditado ao time que jogou aqui, não ao elenco.
+model MatchPlayer {
+  id       String @id @default(cuid())
+
+  match    Match  @relation(fields: [matchId], references: [id], onDelete: Cascade)
+  matchId  String
+  player   Player @relation(fields: [playerId], references: [id], onDelete: Cascade)
+  playerId String
+  team     Team   @relation(fields: [teamId], references: [id], onDelete: Cascade)
+  teamId   String
+
+  @@unique([matchId, playerId])
+}
+
+model Match {
+  id    String  @id @default(cuid())
+  stage String // GROUP | SF1 | SF2 | THIRD | FINAL
+  round Int? // rodada da fase de grupos (1..6) para ordenação
+
+  homePens Int? // pênaltis (desempate nas eliminatórias)
+  awayPens Int?
+  finished Boolean @default(false)
+
+  championship   Championship @relation(fields: [championshipId], references: [id], onDelete: Cascade)
+  championshipId String
+  homeTeam       Team         @relation("home", fields: [homeTeamId], references: [id], onDelete: Cascade)
+  homeTeamId     String
+  awayTeam       Team         @relation("away", fields: [awayTeamId], references: [id], onDelete: Cascade)
+  awayTeamId     String
+
+  goals        GoalEvent[]
+  matchPlayers MatchPlayer[]
+  createdAt    DateTime    @default(now())
+}
+
+// Um gol. A pontuação da partida é derivada destes eventos:
+//   placar do time = nº de GoalEvent cujo teamId aponta para ele.
+// Para gol contra, teamId já aponta para o time BENEFICIADO (adversário do
+// autor), enquanto scorerId guarda o autor (para creditar o gol contra a ele).
+model GoalEvent {
+  id        String  @id @default(cuid())
+  isOwnGoal Boolean @default(false)
+  isPenalty Boolean @default(false)
+
+  match    Match   @relation(fields: [matchId], references: [id], onDelete: Cascade)
+  matchId  String
+  team     Team    @relation("benefit", fields: [teamId], references: [id], onDelete: Cascade)
+  teamId   String
+  scorer   Player? @relation("scorer", fields: [scorerId], references: [id], onDelete: SetNull)
+  scorerId String?
+  assist   Player? @relation("assist", fields: [assistId], references: [id], onDelete: SetNull)
+  assistId String?
+
+  createdAt DateTime @default(now())
+}

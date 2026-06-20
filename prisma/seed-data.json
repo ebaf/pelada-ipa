@@ -1,0 +1,3615 @@
+{
+ "players": [
+  "Adrian",
+  "André Cavalcanti",
+  "André Salgado",
+  "Arthur",
+  "Ary",
+  "Baninho Vitalino",
+  "Daniel Oliveira",
+  "Danilo Ferriera",
+  "Davi Brasil",
+  "Davi Vitalino",
+  "Edimilson",
+  "Edson Jordão",
+  "Elton",
+  "Emanuel Ferreira",
+  "Eric Ezequiel",
+  "Feitosa",
+  "Filipe Albuquerque",
+  "George",
+  "Joabe",
+  "Joel Rocha",
+  "João Ferraz",
+  "João Gabriel",
+  "Júnior Ramos",
+  "Lucas Torres",
+  "Marco Antônio",
+  "Paulinho Brasil",
+  "Paulo Cauas",
+  "Paulo Viana",
+  "Pedro",
+  "Rafa Salgado",
+  "Roberto",
+  "Sanguinetti",
+  "Tiago Vitalino",
+  "Valberto Enoc"
+ ],
+ "championships": [
+  {
+   "date": "2026-05-04",
+   "teams": {
+    "A": {
+     "flag": "https://drive.google.com/uc?id=1f7-v3OCZDX63ydoZN6VR63Ycmh3iwG6S",
+     "crest": "https://drive.google.com/uc?id=1LcJ7HJVhKJYe28dUPnJaJtOMntGkZkz7",
+     "players": [
+      "Filipe Albuquerque",
+      "Joel Rocha",
+      "Daniel Oliveira",
+      "André Cavalcanti",
+      "Rafa Salgado",
+      "Arthur"
+     ]
+    },
+    "B": {
+     "flag": "https://drive.google.com/uc?id=1-u6ku5qEJjbio1HDNFod6U6lrgNBYdz3",
+     "crest": "https://drive.google.com/uc?id=1t0FlWkGK6X4JJSZGv5Zo-vmsdxUdWuD_",
+     "players": [
+      "Danilo Ferriera",
+      "Valberto Enoc",
+      "Emanuel Ferreira",
+      "Davi Vitalino",
+      "Tiago Vitalino"
+     ]
+    },
+    "C": {
+     "flag": "https://drive.google.com/uc?id=1zZN6srM-GX3B3IOy2c4iyFVv9waZf-IG",
+     "crest": "https://drive.google.com/uc?id=136FyvL3aTe-MwZJLsuWs50pieWONSn65",
+     "players": [
+      "Baninho Vitalino",
+      "Júnior Ramos",
+      "Edson Jordão",
+      "Davi Brasil",
+      "Paulo Viana"
+     ]
+    },
+    "D": {
+     "flag": "https://drive.google.com/uc?id=1Z-EO-YjMTuaRyVmaCbphP5JQEpiu74hK",
+     "crest": "https://drive.google.com/uc?id=1dBkmVVURWPCBwcEjt1kDk_YyoWnBp6P3",
+     "players": [
+      "Eric Ezequiel",
+      "Lucas Torres",
+      "Marco Antônio",
+      "Edimilson",
+      "João Gabriel"
+     ]
+    }
+   },
+   "groupMatches": [
+    {
+     "round": 1,
+     "home": "A",
+     "away": "B",
+     "homeGoals": 2,
+     "awayGoals": 1
+    },
+    {
+     "round": 2,
+     "home": "C",
+     "away": "D",
+     "homeGoals": 1,
+     "awayGoals": 2
+    },
+    {
+     "round": 3,
+     "home": "A",
+     "away": "C",
+     "homeGoals": 3,
+     "awayGoals": 3
+    },
+    {
+     "round": 4,
+     "home": "B",
+     "away": "D",
+     "homeGoals": 3,
+     "awayGoals": 2
+    },
+    {
+     "round": 5,
+     "home": "A",
+     "away": "D",
+     "homeGoals": 2,
+     "awayGoals": 3
+    },
+    {
+     "round": 6,
+     "home": "B",
+     "away": "C",
+     "homeGoals": 4,
+     "awayGoals": 1
+    }
+   ],
+   "knockoutMatches": [
+    {
+     "stage": "SF1",
+     "phase": "Semi-finais",
+     "home": "D",
+     "away": "C",
+     "homeGoals": 0,
+     "awayGoals": 6,
+     "homePens": null,
+     "awayPens": null
+    },
+    {
+     "stage": "SF2",
+     "phase": "Semi-finais",
+     "home": "A",
+     "away": "B",
+     "homeGoals": 1,
+     "awayGoals": 3,
+     "homePens": null,
+     "awayPens": null
+    },
+    {
+     "stage": "3º",
+     "phase": "Disputa 3º",
+     "home": "D",
+     "away": "A",
+     "homeGoals": 2,
+     "awayGoals": 1,
+     "homePens": null,
+     "awayPens": null
+    },
+    {
+     "stage": "Final",
+     "phase": "Final",
+     "home": "C",
+     "away": "B",
+     "homeGoals": 2,
+     "awayGoals": 3,
+     "homePens": null,
+     "awayPens": null
+    }
+   ],
+   "goals": [
+    {
+     "round": "1",
+     "scorerTeam": "A",
+     "scorer": "André Cavalcanti",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "B"
+    },
+    {
+     "round": "1",
+     "scorerTeam": "B",
+     "scorer": "Danilo Ferriera",
+     "assist": "Tiago Vitalino",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "B"
+    },
+    {
+     "round": "1",
+     "scorerTeam": "A",
+     "scorer": "Daniel Oliveira",
+     "assist": "Rafa Salgado",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "B"
+    },
+    {
+     "round": "2",
+     "scorerTeam": "D",
+     "scorer": "João Gabriel",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "D"
+    },
+    {
+     "round": "2",
+     "scorerTeam": "C",
+     "scorer": "Davi Brasil",
+     "assist": "Baninho Vitalino",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "D"
+    },
+    {
+     "round": "2",
+     "scorerTeam": "D",
+     "scorer": "Eric Ezequiel",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "D"
+    },
+    {
+     "round": "3",
+     "scorerTeam": "C",
+     "scorer": "Júnior Ramos",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "C"
+    },
+    {
+     "round": "3",
+     "scorerTeam": "C",
+     "scorer": "Júnior Ramos",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "C"
+    },
+    {
+     "round": "3",
+     "scorerTeam": "A",
+     "scorer": "Filipe Albuquerque",
+     "assist": "Daniel Oliveira",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "C"
+    },
+    {
+     "round": "3",
+     "scorerTeam": "A",
+     "scorer": "Filipe Albuquerque",
+     "assist": "Arthur",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "C"
+    },
+    {
+     "round": "3",
+     "scorerTeam": "C",
+     "scorer": "Baninho Vitalino",
+     "assist": "Paulo Viana",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "C"
+    },
+    {
+     "round": "3",
+     "scorerTeam": "A",
+     "scorer": "Filipe Albuquerque",
+     "assist": "Rafa Salgado",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "C"
+    },
+    {
+     "round": "4",
+     "scorerTeam": "D",
+     "scorer": "João Gabriel",
+     "assist": "Lucas Torres",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "4",
+     "scorerTeam": "B",
+     "scorer": "Davi Vitalino",
+     "assist": "Valberto Enoc",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "4",
+     "scorerTeam": "D",
+     "scorer": "Eric Ezequiel",
+     "assist": "João Gabriel",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "4",
+     "scorerTeam": "B",
+     "scorer": "Danilo Ferriera",
+     "assist": "Tiago Vitalino",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "4",
+     "scorerTeam": "B",
+     "scorer": "Emanuel Ferreira",
+     "assist": "Danilo Ferriera",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "5",
+     "scorerTeam": "A",
+     "scorer": "André Cavalcanti",
+     "assist": "Filipe Albuquerque",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "D"
+    },
+    {
+     "round": "5",
+     "scorerTeam": "A",
+     "scorer": "Joel Rocha",
+     "assist": "Filipe Albuquerque",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "D"
+    },
+    {
+     "round": "5",
+     "scorerTeam": "D",
+     "scorer": "Edimilson",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "D"
+    },
+    {
+     "round": "5",
+     "scorerTeam": "D",
+     "scorer": "Marco Antônio",
+     "assist": "Edimilson",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "D"
+    },
+    {
+     "round": "5",
+     "scorerTeam": "D",
+     "scorer": "João Gabriel",
+     "assist": "Edimilson",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "D"
+    },
+    {
+     "round": "6",
+     "scorerTeam": "C",
+     "scorer": "Baninho Vitalino",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "C"
+    },
+    {
+     "round": "6",
+     "scorerTeam": "B",
+     "scorer": "Davi Vitalino",
+     "assist": "Danilo Ferriera",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "C"
+    },
+    {
+     "round": "6",
+     "scorerTeam": "B",
+     "scorer": "Tiago Vitalino",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "C"
+    },
+    {
+     "round": "6",
+     "scorerTeam": "B",
+     "scorer": "Tiago Vitalino",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "C"
+    },
+    {
+     "round": "6",
+     "scorerTeam": "B",
+     "scorer": "Tiago Vitalino",
+     "assist": "Valberto Enoc",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "C"
+    },
+    {
+     "round": "SF1",
+     "scorerTeam": "C",
+     "scorer": "Baninho Vitalino",
+     "assist": "Júnior Ramos",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "D",
+     "t2": "C"
+    },
+    {
+     "round": "SF1",
+     "scorerTeam": "C",
+     "scorer": "Júnior Ramos",
+     "assist": "Baninho Vitalino",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "D",
+     "t2": "C"
+    },
+    {
+     "round": "SF1",
+     "scorerTeam": "C",
+     "scorer": "Baninho Vitalino",
+     "assist": "Júnior Ramos",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "D",
+     "t2": "C"
+    },
+    {
+     "round": "SF1",
+     "scorerTeam": "C",
+     "scorer": "Paulo Viana",
+     "assist": "Júnior Ramos",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "D",
+     "t2": "C"
+    },
+    {
+     "round": "SF1",
+     "scorerTeam": "C",
+     "scorer": "Júnior Ramos",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "D",
+     "t2": "C"
+    },
+    {
+     "round": "SF1",
+     "scorerTeam": "C",
+     "scorer": "Júnior Ramos",
+     "assist": "Paulo Viana",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "D",
+     "t2": "C"
+    },
+    {
+     "round": "SF2",
+     "scorerTeam": "A",
+     "scorer": "Filipe Albuquerque",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "B"
+    },
+    {
+     "round": "SF2",
+     "scorerTeam": "B",
+     "scorer": "Davi Vitalino",
+     "assist": "Tiago Vitalino",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "B"
+    },
+    {
+     "round": "SF2",
+     "scorerTeam": "B",
+     "scorer": "Tiago Vitalino",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "B"
+    },
+    {
+     "round": "SF2",
+     "scorerTeam": "B",
+     "scorer": "Tiago Vitalino",
+     "assist": "Valberto Enoc",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "B"
+    },
+    {
+     "round": "3º",
+     "scorerTeam": "D",
+     "scorer": "Eric Ezequiel",
+     "assist": "Edimilson",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "D",
+     "t2": "A"
+    },
+    {
+     "round": "3º",
+     "scorerTeam": "D",
+     "scorer": "Eric Ezequiel",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "D",
+     "t2": "A"
+    },
+    {
+     "round": "3º",
+     "scorerTeam": "A",
+     "scorer": "André Cavalcanti",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "D",
+     "t2": "A"
+    },
+    {
+     "round": "Final",
+     "scorerTeam": "C",
+     "scorer": "Júnior Ramos",
+     "assist": "Davi Brasil",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "B"
+    },
+    {
+     "round": "Final",
+     "scorerTeam": "C",
+     "scorer": "Davi Brasil",
+     "assist": null,
+     "ownGoal": true,
+     "penalty": false,
+     "t1": "C",
+     "t2": "B"
+    },
+    {
+     "round": "Final",
+     "scorerTeam": "C",
+     "scorer": "Júnior Ramos",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "B"
+    },
+    {
+     "round": "Final",
+     "scorerTeam": "B",
+     "scorer": "Tiago Vitalino",
+     "assist": "Valberto Enoc",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "B"
+    },
+    {
+     "round": "Final",
+     "scorerTeam": "B",
+     "scorer": "Tiago Vitalino",
+     "assist": "Davi Vitalino",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "B"
+    }
+   ]
+  },
+  {
+   "date": "2026-05-11",
+   "teams": {
+    "A": {
+     "flag": "https://drive.google.com/uc?id=1f7-v3OCZDX63ydoZN6VR63Ycmh3iwG6S",
+     "crest": "https://drive.google.com/uc?id=1LcJ7HJVhKJYe28dUPnJaJtOMntGkZkz7",
+     "players": [
+      "Danilo Ferriera",
+      "Valberto Enoc",
+      "João Ferraz",
+      "Roberto",
+      "Rafa Salgado"
+     ]
+    },
+    "B": {
+     "flag": "https://drive.google.com/uc?id=1-u6ku5qEJjbio1HDNFod6U6lrgNBYdz3",
+     "crest": "https://drive.google.com/uc?id=1t0FlWkGK6X4JJSZGv5Zo-vmsdxUdWuD_",
+     "players": [
+      "Filipe Albuquerque",
+      "Joel Rocha",
+      "Davi Vitalino",
+      "Edson Jordão",
+      "Paulo Viana"
+     ]
+    },
+    "C": {
+     "flag": "https://drive.google.com/uc?id=1zZN6srM-GX3B3IOy2c4iyFVv9waZf-IG",
+     "crest": "https://drive.google.com/uc?id=136FyvL3aTe-MwZJLsuWs50pieWONSn65",
+     "players": [
+      "Baninho Vitalino",
+      "Edimilson",
+      "Daniel Oliveira",
+      "Lucas Torres",
+      "Paulinho Brasil",
+      "Arthur"
+     ]
+    },
+    "D": {
+     "flag": "https://drive.google.com/uc?id=1Z-EO-YjMTuaRyVmaCbphP5JQEpiu74hK",
+     "crest": "https://drive.google.com/uc?id=1dBkmVVURWPCBwcEjt1kDk_YyoWnBp6P3",
+     "players": [
+      "Júnior Ramos",
+      "Eric Ezequiel",
+      "Tiago Vitalino",
+      "Emanuel Ferreira",
+      "Marco Antônio"
+     ]
+    }
+   },
+   "groupMatches": [
+    {
+     "round": 1,
+     "home": "A",
+     "away": "B",
+     "homeGoals": 0,
+     "awayGoals": 1
+    },
+    {
+     "round": 2,
+     "home": "C",
+     "away": "D",
+     "homeGoals": 5,
+     "awayGoals": 3
+    },
+    {
+     "round": 3,
+     "home": "A",
+     "away": "C",
+     "homeGoals": 2,
+     "awayGoals": 2
+    },
+    {
+     "round": 4,
+     "home": "B",
+     "away": "D",
+     "homeGoals": 2,
+     "awayGoals": 1
+    },
+    {
+     "round": 5,
+     "home": "A",
+     "away": "D",
+     "homeGoals": 0,
+     "awayGoals": 1
+    },
+    {
+     "round": 6,
+     "home": "B",
+     "away": "C",
+     "homeGoals": 0,
+     "awayGoals": 1
+    }
+   ],
+   "knockoutMatches": [
+    {
+     "stage": "SF1",
+     "phase": "Semi-finais",
+     "home": "C",
+     "away": "A",
+     "homeGoals": 4,
+     "awayGoals": 1,
+     "homePens": null,
+     "awayPens": null
+    },
+    {
+     "stage": "SF2",
+     "phase": "Semi-finais",
+     "home": "B",
+     "away": "D",
+     "homeGoals": 1,
+     "awayGoals": 5,
+     "homePens": null,
+     "awayPens": null
+    },
+    {
+     "stage": "3º",
+     "phase": "Disputa 3º",
+     "home": "A",
+     "away": "B",
+     "homeGoals": 4,
+     "awayGoals": 1,
+     "homePens": null,
+     "awayPens": null
+    },
+    {
+     "stage": "Final",
+     "phase": "Final",
+     "home": "C",
+     "away": "D",
+     "homeGoals": 4,
+     "awayGoals": 3,
+     "homePens": null,
+     "awayPens": null
+    }
+   ],
+   "goals": [
+    {
+     "round": "1",
+     "scorerTeam": "B",
+     "scorer": "Filipe Albuquerque",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "B"
+    },
+    {
+     "round": "2",
+     "scorerTeam": "C",
+     "scorer": "Baninho Vitalino",
+     "assist": "Paulinho Brasil",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "D"
+    },
+    {
+     "round": "2",
+     "scorerTeam": "C",
+     "scorer": "Paulinho Brasil",
+     "assist": "Edimilson",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "D"
+    },
+    {
+     "round": "2",
+     "scorerTeam": "D",
+     "scorer": "Júnior Ramos",
+     "assist": "Eric Ezequiel",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "D"
+    },
+    {
+     "round": "2",
+     "scorerTeam": "D",
+     "scorer": "Eric Ezequiel",
+     "assist": "Júnior Ramos",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "D"
+    },
+    {
+     "round": "2",
+     "scorerTeam": "D",
+     "scorer": "Júnior Ramos",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "D"
+    },
+    {
+     "round": "2",
+     "scorerTeam": "C",
+     "scorer": "Baninho Vitalino",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "D"
+    },
+    {
+     "round": "2",
+     "scorerTeam": "C",
+     "scorer": "Lucas Torres",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "D"
+    },
+    {
+     "round": "2",
+     "scorerTeam": "C",
+     "scorer": "Edimilson",
+     "assist": "Paulinho Brasil",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "D"
+    },
+    {
+     "round": "3",
+     "scorerTeam": "C",
+     "scorer": "Baninho Vitalino",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "C"
+    },
+    {
+     "round": "3",
+     "scorerTeam": "A",
+     "scorer": "Rafa Salgado",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "C"
+    },
+    {
+     "round": "3",
+     "scorerTeam": "A",
+     "scorer": "Roberto",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "C"
+    },
+    {
+     "round": "3",
+     "scorerTeam": "C",
+     "scorer": "Paulinho Brasil",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "C"
+    },
+    {
+     "round": "4",
+     "scorerTeam": "B",
+     "scorer": "Joel Rocha",
+     "assist": "Filipe Albuquerque",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "4",
+     "scorerTeam": "D",
+     "scorer": "Júnior Ramos",
+     "assist": "Eric Ezequiel",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "4",
+     "scorerTeam": "B",
+     "scorer": "Edson Jordão",
+     "assist": "Filipe Albuquerque",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "5",
+     "scorerTeam": "D",
+     "scorer": "Emanuel Ferreira",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "D"
+    },
+    {
+     "round": "6",
+     "scorerTeam": "C",
+     "scorer": "Baninho Vitalino",
+     "assist": "Paulinho Brasil",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "C"
+    },
+    {
+     "round": "SF1",
+     "scorerTeam": "C",
+     "scorer": "Baninho Vitalino",
+     "assist": "Edimilson",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "A"
+    },
+    {
+     "round": "SF1",
+     "scorerTeam": "A",
+     "scorer": "Rafa Salgado",
+     "assist": "Valberto Enoc",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "A"
+    },
+    {
+     "round": "SF1",
+     "scorerTeam": "C",
+     "scorer": "Edimilson",
+     "assist": "Paulinho Brasil",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "A"
+    },
+    {
+     "round": "SF1",
+     "scorerTeam": "C",
+     "scorer": "Baninho Vitalino",
+     "assist": "Arthur",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "A"
+    },
+    {
+     "round": "SF1",
+     "scorerTeam": "C",
+     "scorer": "Edimilson",
+     "assist": "Arthur",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "A"
+    },
+    {
+     "round": "SF2",
+     "scorerTeam": "B",
+     "scorer": "Joel Rocha",
+     "assist": "Davi Vitalino",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "SF2",
+     "scorerTeam": "D",
+     "scorer": "Júnior Ramos",
+     "assist": "Marco Antônio",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "SF2",
+     "scorerTeam": "B",
+     "scorer": null,
+     "assist": null,
+     "ownGoal": true,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "SF2",
+     "scorerTeam": "D",
+     "scorer": "Tiago Vitalino",
+     "assist": "Emanuel Ferreira",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "SF2",
+     "scorerTeam": "D",
+     "scorer": "Marco Antônio",
+     "assist": "Júnior Ramos",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "SF2",
+     "scorerTeam": "D",
+     "scorer": "Tiago Vitalino",
+     "assist": "Júnior Ramos",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "3º",
+     "scorerTeam": "B",
+     "scorer": "Filipe Albuquerque",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "B"
+    },
+    {
+     "round": "3º",
+     "scorerTeam": "A",
+     "scorer": "João Ferraz",
+     "assist": "Valberto Enoc",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "B"
+    },
+    {
+     "round": "3º",
+     "scorerTeam": "A",
+     "scorer": "Danilo Ferriera",
+     "assist": "Valberto Enoc",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "B"
+    },
+    {
+     "round": "3º",
+     "scorerTeam": "A",
+     "scorer": "João Ferraz",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "B"
+    },
+    {
+     "round": "3º",
+     "scorerTeam": "A",
+     "scorer": "João Ferraz",
+     "assist": "Danilo Ferriera",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "B"
+    },
+    {
+     "round": "Final",
+     "scorerTeam": "C",
+     "scorer": "Baninho Vitalino",
+     "assist": "Arthur",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "D"
+    },
+    {
+     "round": "Final",
+     "scorerTeam": "D",
+     "scorer": "Júnior Ramos",
+     "assist": "Marco Antônio",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "D"
+    },
+    {
+     "round": "Final",
+     "scorerTeam": "C",
+     "scorer": "Baninho Vitalino",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "D"
+    },
+    {
+     "round": "Final",
+     "scorerTeam": "C",
+     "scorer": "Baninho Vitalino",
+     "assist": "Edimilson",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "D"
+    },
+    {
+     "round": "Final",
+     "scorerTeam": "C",
+     "scorer": "Edimilson",
+     "assist": "Arthur",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "D"
+    },
+    {
+     "round": "Final",
+     "scorerTeam": "D",
+     "scorer": "Júnior Ramos",
+     "assist": "Tiago Vitalino",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "D"
+    },
+    {
+     "round": "Final",
+     "scorerTeam": "C",
+     "scorer": null,
+     "assist": null,
+     "ownGoal": true,
+     "penalty": false,
+     "t1": "C",
+     "t2": "D"
+    }
+   ]
+  },
+  {
+   "date": "2026-05-18",
+   "teams": {
+    "A": {
+     "flag": "https://drive.google.com/uc?id=1f7-v3OCZDX63ydoZN6VR63Ycmh3iwG6S",
+     "crest": "https://drive.google.com/uc?id=1LcJ7HJVhKJYe28dUPnJaJtOMntGkZkz7",
+     "players": [
+      "Júnior Ramos",
+      "Lucas Torres",
+      "João Gabriel",
+      "Paulo Cauas",
+      "Davi Brasil"
+     ]
+    },
+    "B": {
+     "flag": "https://drive.google.com/uc?id=1-u6ku5qEJjbio1HDNFod6U6lrgNBYdz3",
+     "crest": "https://drive.google.com/uc?id=1t0FlWkGK6X4JJSZGv5Zo-vmsdxUdWuD_",
+     "players": [
+      "Tiago Vitalino",
+      "Danilo Ferriera",
+      "Emanuel Ferreira",
+      "André Cavalcanti",
+      "Edson Jordão"
+     ]
+    },
+    "C": {
+     "flag": "https://drive.google.com/uc?id=1zZN6srM-GX3B3IOy2c4iyFVv9waZf-IG",
+     "crest": "https://drive.google.com/uc?id=136FyvL3aTe-MwZJLsuWs50pieWONSn65",
+     "players": [
+      "Edimilson",
+      "Davi Vitalino",
+      "Valberto Enoc",
+      "Marco Antônio",
+      "Paulo Viana"
+     ]
+    },
+    "D": {
+     "flag": "https://drive.google.com/uc?id=1Z-EO-YjMTuaRyVmaCbphP5JQEpiu74hK",
+     "crest": "https://drive.google.com/uc?id=1dBkmVVURWPCBwcEjt1kDk_YyoWnBp6P3",
+     "players": [
+      "Paulinho Brasil",
+      "Eric Ezequiel",
+      "Filipe Albuquerque",
+      "Daniel Oliveira",
+      "Joel Rocha"
+     ]
+    }
+   },
+   "groupMatches": [
+    {
+     "round": 1,
+     "home": "A",
+     "away": "B",
+     "homeGoals": 3,
+     "awayGoals": 1
+    },
+    {
+     "round": 2,
+     "home": "C",
+     "away": "D",
+     "homeGoals": 0,
+     "awayGoals": 0
+    },
+    {
+     "round": 3,
+     "home": "A",
+     "away": "C",
+     "homeGoals": 1,
+     "awayGoals": 2
+    },
+    {
+     "round": 4,
+     "home": "B",
+     "away": "D",
+     "homeGoals": 0,
+     "awayGoals": 3
+    },
+    {
+     "round": 5,
+     "home": "A",
+     "away": "D",
+     "homeGoals": 2,
+     "awayGoals": 1
+    },
+    {
+     "round": 6,
+     "home": "B",
+     "away": "C",
+     "homeGoals": 1,
+     "awayGoals": 2
+    }
+   ],
+   "knockoutMatches": [
+    {
+     "stage": "SF1",
+     "phase": "Semi-finais",
+     "home": "C",
+     "away": "B",
+     "homeGoals": 3,
+     "awayGoals": 0,
+     "homePens": null,
+     "awayPens": null
+    },
+    {
+     "stage": "SF2",
+     "phase": "Semi-finais",
+     "home": "A",
+     "away": "D",
+     "homeGoals": 1,
+     "awayGoals": 2,
+     "homePens": null,
+     "awayPens": null
+    },
+    {
+     "stage": "3º",
+     "phase": "Disputa 3º",
+     "home": "B",
+     "away": "A",
+     "homeGoals": 1,
+     "awayGoals": 3,
+     "homePens": null,
+     "awayPens": null
+    },
+    {
+     "stage": "Final",
+     "phase": "Final",
+     "home": "C",
+     "away": "D",
+     "homeGoals": 2,
+     "awayGoals": 1,
+     "homePens": null,
+     "awayPens": null
+    }
+   ],
+   "goals": [
+    {
+     "round": "1",
+     "scorerTeam": "B",
+     "scorer": "André Cavalcanti",
+     "assist": "Danilo Ferriera",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "B"
+    },
+    {
+     "round": "1",
+     "scorerTeam": "A",
+     "scorer": "Júnior Ramos",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "B"
+    },
+    {
+     "round": "1",
+     "scorerTeam": "A",
+     "scorer": "Paulo Cauas",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "B"
+    },
+    {
+     "round": "1",
+     "scorerTeam": "A",
+     "scorer": "Paulo Cauas",
+     "assist": "Júnior Ramos",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "B"
+    },
+    {
+     "round": "3",
+     "scorerTeam": "A",
+     "scorer": "Davi Brasil",
+     "assist": "João Gabriel",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "C"
+    },
+    {
+     "round": "3",
+     "scorerTeam": "C",
+     "scorer": "Marco Antônio",
+     "assist": "Valberto Enoc",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "C"
+    },
+    {
+     "round": "3",
+     "scorerTeam": "C",
+     "scorer": "Davi Vitalino",
+     "assist": "Valberto Enoc",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "C"
+    },
+    {
+     "round": "4",
+     "scorerTeam": "D",
+     "scorer": "Daniel Oliveira",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "4",
+     "scorerTeam": "D",
+     "scorer": "Joel Rocha",
+     "assist": "Filipe Albuquerque",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "4",
+     "scorerTeam": "D",
+     "scorer": "Joel Rocha",
+     "assist": "Filipe Albuquerque",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "5",
+     "scorerTeam": "A",
+     "scorer": "Júnior Ramos",
+     "assist": "João Gabriel",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "D"
+    },
+    {
+     "round": "5",
+     "scorerTeam": "A",
+     "scorer": "João Gabriel",
+     "assist": "Júnior Ramos",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "D"
+    },
+    {
+     "round": "5",
+     "scorerTeam": "D",
+     "scorer": "Daniel Oliveira",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "D"
+    },
+    {
+     "round": "6",
+     "scorerTeam": "C",
+     "scorer": "Valberto Enoc",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "C"
+    },
+    {
+     "round": "6",
+     "scorerTeam": "C",
+     "scorer": "Davi Vitalino",
+     "assist": "Valberto Enoc",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "C"
+    },
+    {
+     "round": "6",
+     "scorerTeam": "B",
+     "scorer": "Tiago Vitalino",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "C"
+    },
+    {
+     "round": "SF1",
+     "scorerTeam": "C",
+     "scorer": "Davi Vitalino",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "B"
+    },
+    {
+     "round": "SF1",
+     "scorerTeam": "C",
+     "scorer": "Edimilson",
+     "assist": "Valberto Enoc",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "B"
+    },
+    {
+     "round": "SF1",
+     "scorerTeam": "C",
+     "scorer": "Davi Vitalino",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "B"
+    },
+    {
+     "round": "SF2",
+     "scorerTeam": "A",
+     "scorer": "João Gabriel",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "D"
+    },
+    {
+     "round": "SF2",
+     "scorerTeam": "A",
+     "scorer": null,
+     "assist": null,
+     "ownGoal": true,
+     "penalty": false,
+     "t1": "A",
+     "t2": "D"
+    },
+    {
+     "round": "SF2",
+     "scorerTeam": "D",
+     "scorer": "Filipe Albuquerque",
+     "assist": "Joel Rocha",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "D"
+    },
+    {
+     "round": "3º",
+     "scorerTeam": "A",
+     "scorer": "Júnior Ramos",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "A"
+    },
+    {
+     "round": "3º",
+     "scorerTeam": "B",
+     "scorer": "Tiago Vitalino",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "A"
+    },
+    {
+     "round": "3º",
+     "scorerTeam": "A",
+     "scorer": "Paulo Cauas",
+     "assist": "Júnior Ramos",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "A"
+    },
+    {
+     "round": "3º",
+     "scorerTeam": "A",
+     "scorer": "João Gabriel",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "A"
+    },
+    {
+     "round": "Final",
+     "scorerTeam": "C",
+     "scorer": "Davi Vitalino",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "D"
+    },
+    {
+     "round": "Final",
+     "scorerTeam": "C",
+     "scorer": "Marco Antônio",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "D"
+    },
+    {
+     "round": "Final",
+     "scorerTeam": "D",
+     "scorer": "Paulinho Brasil",
+     "assist": "Filipe Albuquerque",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "D"
+    }
+   ]
+  },
+  {
+   "date": "2026-05-25",
+   "teams": {
+    "A": {
+     "flag": "https://drive.google.com/uc?id=1f7-v3OCZDX63ydoZN6VR63Ycmh3iwG6S",
+     "crest": "https://drive.google.com/uc?id=1LcJ7HJVhKJYe28dUPnJaJtOMntGkZkz7",
+     "players": [
+      "Júnior Ramos",
+      "Tiago Vitalino",
+      "Lucas Torres",
+      "Rafa Salgado",
+      "Joabe",
+      "Arthur"
+     ]
+    },
+    "B": {
+     "flag": "https://drive.google.com/uc?id=1-u6ku5qEJjbio1HDNFod6U6lrgNBYdz3",
+     "crest": "https://drive.google.com/uc?id=1t0FlWkGK6X4JJSZGv5Zo-vmsdxUdWuD_",
+     "players": [
+      "Baninho Vitalino",
+      "Filipe Albuquerque",
+      "Joel Rocha",
+      "Danilo Ferriera",
+      "George"
+     ]
+    },
+    "C": {
+     "flag": "https://drive.google.com/uc?id=1zZN6srM-GX3B3IOy2c4iyFVv9waZf-IG",
+     "crest": "https://drive.google.com/uc?id=136FyvL3aTe-MwZJLsuWs50pieWONSn65",
+     "players": [
+      "Edimilson",
+      "João Gabriel",
+      "Paulinho Brasil",
+      "João Ferraz",
+      "André Cavalcanti"
+     ]
+    },
+    "D": {
+     "flag": "https://drive.google.com/uc?id=1Z-EO-YjMTuaRyVmaCbphP5JQEpiu74hK",
+     "crest": "https://drive.google.com/uc?id=1dBkmVVURWPCBwcEjt1kDk_YyoWnBp6P3",
+     "players": [
+      "Davi Vitalino",
+      "Valberto Enoc",
+      "Ary",
+      "Paulo Viana",
+      "Feitosa"
+     ]
+    }
+   },
+   "groupMatches": [
+    {
+     "round": 1,
+     "home": "C",
+     "away": "D",
+     "homeGoals": 3,
+     "awayGoals": 2
+    },
+    {
+     "round": 2,
+     "home": "A",
+     "away": "B",
+     "homeGoals": 3,
+     "awayGoals": 1
+    },
+    {
+     "round": 3,
+     "home": "A",
+     "away": "C",
+     "homeGoals": 2,
+     "awayGoals": 3
+    },
+    {
+     "round": 4,
+     "home": "B",
+     "away": "D",
+     "homeGoals": 1,
+     "awayGoals": 2
+    },
+    {
+     "round": 5,
+     "home": "A",
+     "away": "D",
+     "homeGoals": 1,
+     "awayGoals": 1
+    },
+    {
+     "round": 6,
+     "home": "B",
+     "away": "C",
+     "homeGoals": 2,
+     "awayGoals": 2
+    }
+   ],
+   "knockoutMatches": [
+    {
+     "stage": "SF1",
+     "phase": "Semi-finais",
+     "home": "C",
+     "away": "B",
+     "homeGoals": 0,
+     "awayGoals": 0,
+     "homePens": null,
+     "awayPens": null
+    },
+    {
+     "stage": "SF2",
+     "phase": "Semi-finais",
+     "home": "A",
+     "away": "D",
+     "homeGoals": 2,
+     "awayGoals": 2,
+     "homePens": null,
+     "awayPens": null
+    },
+    {
+     "stage": "3º",
+     "phase": "Disputa 3º",
+     "home": "B",
+     "away": "D",
+     "homeGoals": 0,
+     "awayGoals": 2,
+     "homePens": null,
+     "awayPens": null
+    },
+    {
+     "stage": "Final",
+     "phase": "Final",
+     "home": "A",
+     "away": "C",
+     "homeGoals": 3,
+     "awayGoals": 3,
+     "homePens": null,
+     "awayPens": null
+    }
+   ],
+   "goals": [
+    {
+     "round": "1",
+     "scorerTeam": "C",
+     "scorer": "João Ferraz",
+     "assist": "Paulinho Brasil",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "D"
+    },
+    {
+     "round": "1",
+     "scorerTeam": "D",
+     "scorer": "Paulo Viana",
+     "assist": "Valberto Enoc",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "D"
+    },
+    {
+     "round": "1",
+     "scorerTeam": "D",
+     "scorer": "Feitosa",
+     "assist": "Valberto Enoc",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "D"
+    },
+    {
+     "round": "1",
+     "scorerTeam": "C",
+     "scorer": "João Ferraz",
+     "assist": "João Gabriel",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "D"
+    },
+    {
+     "round": "1",
+     "scorerTeam": "C",
+     "scorer": "Edimilson",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "D"
+    },
+    {
+     "round": "2",
+     "scorerTeam": "A",
+     "scorer": "Júnior Ramos",
+     "assist": "Arthur",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "B"
+    },
+    {
+     "round": "2",
+     "scorerTeam": "A",
+     "scorer": "Joabe",
+     "assist": "Júnior Ramos",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "B"
+    },
+    {
+     "round": "2",
+     "scorerTeam": "A",
+     "scorer": "Júnior Ramos",
+     "assist": "Tiago Vitalino",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "B"
+    },
+    {
+     "round": "2",
+     "scorerTeam": "B",
+     "scorer": "Joel Rocha",
+     "assist": "Filipe Albuquerque",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "B"
+    },
+    {
+     "round": "3",
+     "scorerTeam": "C",
+     "scorer": "João Ferraz",
+     "assist": "João Gabriel",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "C"
+    },
+    {
+     "round": "3",
+     "scorerTeam": "A",
+     "scorer": "Tiago Vitalino",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "C"
+    },
+    {
+     "round": "3",
+     "scorerTeam": "C",
+     "scorer": "João Gabriel",
+     "assist": "Edimilson",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "C"
+    },
+    {
+     "round": "3",
+     "scorerTeam": "C",
+     "scorer": "João Gabriel",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "C"
+    },
+    {
+     "round": "3",
+     "scorerTeam": "A",
+     "scorer": "Júnior Ramos",
+     "assist": "Tiago Vitalino",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "C"
+    },
+    {
+     "round": "4",
+     "scorerTeam": "B",
+     "scorer": "Joel Rocha",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "4",
+     "scorerTeam": "B",
+     "scorer": null,
+     "assist": null,
+     "ownGoal": true,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "4",
+     "scorerTeam": "D",
+     "scorer": "Feitosa",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "5",
+     "scorerTeam": "A",
+     "scorer": "Joabe",
+     "assist": "Júnior Ramos",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "D"
+    },
+    {
+     "round": "5",
+     "scorerTeam": "D",
+     "scorer": "Feitosa",
+     "assist": "Davi Vitalino",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "D"
+    },
+    {
+     "round": "6",
+     "scorerTeam": "C",
+     "scorer": "João Gabriel",
+     "assist": "Edimilson",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "C"
+    },
+    {
+     "round": "6",
+     "scorerTeam": "B",
+     "scorer": "Baninho Vitalino",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "C"
+    },
+    {
+     "round": "6",
+     "scorerTeam": "C",
+     "scorer": "Edimilson",
+     "assist": "João Ferraz",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "C"
+    },
+    {
+     "round": "6",
+     "scorerTeam": "B",
+     "scorer": "Danilo Ferriera",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "C"
+    },
+    {
+     "round": "SF2",
+     "scorerTeam": "D",
+     "scorer": "Feitosa",
+     "assist": "Paulo Viana",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "D"
+    },
+    {
+     "round": "SF2",
+     "scorerTeam": "A",
+     "scorer": "Lucas Torres",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "D"
+    },
+    {
+     "round": "SF2",
+     "scorerTeam": "A",
+     "scorer": "Júnior Ramos",
+     "assist": "Tiago Vitalino",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "D"
+    },
+    {
+     "round": "SF2",
+     "scorerTeam": "D",
+     "scorer": "Davi Vitalino",
+     "assist": "Paulo Viana",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "D"
+    },
+    {
+     "round": "3º",
+     "scorerTeam": "D",
+     "scorer": "Paulo Viana",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "3º",
+     "scorerTeam": "D",
+     "scorer": "Feitosa",
+     "assist": "Paulo Viana",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "Final",
+     "scorerTeam": "C",
+     "scorer": "João Gabriel",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "C"
+    },
+    {
+     "round": "Final",
+     "scorerTeam": "C",
+     "scorer": "João Ferraz",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "C"
+    },
+    {
+     "round": "Final",
+     "scorerTeam": "C",
+     "scorer": "Edimilson",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "C"
+    },
+    {
+     "round": "Final",
+     "scorerTeam": "A",
+     "scorer": "Tiago Vitalino",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "C"
+    },
+    {
+     "round": "Final",
+     "scorerTeam": "A",
+     "scorer": "Arthur",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "C"
+    },
+    {
+     "round": "Final",
+     "scorerTeam": "A",
+     "scorer": "Rafa Salgado",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "C"
+    }
+   ]
+  },
+  {
+   "date": "2026-06-01",
+   "teams": {
+    "A": {
+     "flag": "https://drive.google.com/uc?id=1f7-v3OCZDX63ydoZN6VR63Ycmh3iwG6S",
+     "crest": "https://drive.google.com/uc?id=1LcJ7HJVhKJYe28dUPnJaJtOMntGkZkz7",
+     "players": [
+      "Júnior Ramos",
+      "Valberto Enoc",
+      "Lucas Torres",
+      "Paulo Cauas",
+      "André Cavalcanti",
+      "Arthur"
+     ]
+    },
+    "B": {
+     "flag": "https://drive.google.com/uc?id=1-u6ku5qEJjbio1HDNFod6U6lrgNBYdz3",
+     "crest": "https://drive.google.com/uc?id=1t0FlWkGK6X4JJSZGv5Zo-vmsdxUdWuD_",
+     "players": [
+      "Edimilson",
+      "Paulinho Brasil",
+      "Eric Ezequiel",
+      "Danilo Ferriera",
+      "Emanuel Ferreira"
+     ]
+    },
+    "C": {
+     "flag": "https://drive.google.com/uc?id=1zZN6srM-GX3B3IOy2c4iyFVv9waZf-IG",
+     "crest": "https://drive.google.com/uc?id=136FyvL3aTe-MwZJLsuWs50pieWONSn65",
+     "players": [
+      "Davi Vitalino",
+      "Baninho Vitalino",
+      "Filipe Albuquerque",
+      "Joel Rocha",
+      "Rafa Salgado"
+     ]
+    },
+    "D": {
+     "flag": "https://drive.google.com/uc?id=1Z-EO-YjMTuaRyVmaCbphP5JQEpiu74hK",
+     "crest": "https://drive.google.com/uc?id=1dBkmVVURWPCBwcEjt1kDk_YyoWnBp6P3",
+     "players": [
+      "João Gabriel",
+      "Tiago Vitalino",
+      "João Ferraz",
+      "Arthur",
+      "Edson Jordão"
+     ]
+    }
+   },
+   "groupMatches": [
+    {
+     "round": 1,
+     "home": "A",
+     "away": "B",
+     "homeGoals": 1,
+     "awayGoals": 2
+    },
+    {
+     "round": 2,
+     "home": "C",
+     "away": "D",
+     "homeGoals": 1,
+     "awayGoals": 2
+    },
+    {
+     "round": 3,
+     "home": "A",
+     "away": "C",
+     "homeGoals": 0,
+     "awayGoals": 1
+    },
+    {
+     "round": 4,
+     "home": "B",
+     "away": "D",
+     "homeGoals": 4,
+     "awayGoals": 1
+    },
+    {
+     "round": 5,
+     "home": "A",
+     "away": "D",
+     "homeGoals": 6,
+     "awayGoals": 1
+    },
+    {
+     "round": 6,
+     "home": "B",
+     "away": "C",
+     "homeGoals": 1,
+     "awayGoals": 2
+    }
+   ],
+   "knockoutMatches": [
+    {
+     "stage": "SF1",
+     "phase": "Semi-finais",
+     "home": "B",
+     "away": "A",
+     "homeGoals": 0,
+     "awayGoals": 2,
+     "homePens": null,
+     "awayPens": null
+    },
+    {
+     "stage": "SF2",
+     "phase": "Semi-finais",
+     "home": "D",
+     "away": "C",
+     "homeGoals": 1,
+     "awayGoals": 3,
+     "homePens": null,
+     "awayPens": null
+    },
+    {
+     "stage": "3º",
+     "phase": "Disputa 3º",
+     "home": "B",
+     "away": "D",
+     "homeGoals": 1,
+     "awayGoals": 3,
+     "homePens": null,
+     "awayPens": null
+    },
+    {
+     "stage": "Final",
+     "phase": "Final",
+     "home": "A",
+     "away": "C",
+     "homeGoals": 0,
+     "awayGoals": 2,
+     "homePens": null,
+     "awayPens": null
+    }
+   ],
+   "goals": [
+    {
+     "round": "2",
+     "scorerTeam": "C",
+     "scorer": "Baninho Vitalino",
+     "assist": "Joel Rocha",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "D"
+    },
+    {
+     "round": "2",
+     "scorerTeam": "D",
+     "scorer": "João Ferraz",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "D"
+    },
+    {
+     "round": "2",
+     "scorerTeam": "D",
+     "scorer": "João Ferraz",
+     "assist": "João Gabriel",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "D"
+    },
+    {
+     "round": "1",
+     "scorerTeam": "B",
+     "scorer": "Danilo Ferriera",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "B"
+    },
+    {
+     "round": "1",
+     "scorerTeam": "A",
+     "scorer": "Paulo Cauas",
+     "assist": "Arthur",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "B"
+    },
+    {
+     "round": "1",
+     "scorerTeam": "B",
+     "scorer": "Danilo Ferriera",
+     "assist": "Paulinho Brasil",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "B"
+    },
+    {
+     "round": "3",
+     "scorerTeam": "C",
+     "scorer": "Baninho Vitalino",
+     "assist": "Joel Rocha",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "C"
+    },
+    {
+     "round": "4",
+     "scorerTeam": "B",
+     "scorer": "Edimilson",
+     "assist": "Eric Ezequiel",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "4",
+     "scorerTeam": "B",
+     "scorer": "Paulinho Brasil",
+     "assist": "Emanuel Ferreira",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "4",
+     "scorerTeam": "B",
+     "scorer": "Paulinho Brasil",
+     "assist": "Edimilson",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "4",
+     "scorerTeam": "D",
+     "scorer": "João Gabriel",
+     "assist": "João Ferraz",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "4",
+     "scorerTeam": "B",
+     "scorer": "Emanuel Ferreira",
+     "assist": "Danilo Ferriera",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "5",
+     "scorerTeam": "D",
+     "scorer": "Edson Jordão",
+     "assist": null,
+     "ownGoal": true,
+     "penalty": false,
+     "t1": "A",
+     "t2": "D"
+    },
+    {
+     "round": "5",
+     "scorerTeam": "A",
+     "scorer": "Paulo Cauas",
+     "assist": "Valberto Enoc",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "D"
+    },
+    {
+     "round": "5",
+     "scorerTeam": "A",
+     "scorer": "Júnior Ramos",
+     "assist": "Valberto Enoc",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "D"
+    },
+    {
+     "round": "5",
+     "scorerTeam": "A",
+     "scorer": "Paulo Cauas",
+     "assist": "Valberto Enoc",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "D"
+    },
+    {
+     "round": "5",
+     "scorerTeam": "A",
+     "scorer": "Júnior Ramos",
+     "assist": "Valberto Enoc",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "D"
+    },
+    {
+     "round": "5",
+     "scorerTeam": "D",
+     "scorer": "Arthur",
+     "assist": "Edson Jordão",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "D"
+    },
+    {
+     "round": "5",
+     "scorerTeam": "A",
+     "scorer": "Júnior Ramos",
+     "assist": "Paulo Cauas",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "D"
+    },
+    {
+     "round": "6",
+     "scorerTeam": "C",
+     "scorer": "Davi Vitalino",
+     "assist": "Filipe Albuquerque",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "C"
+    },
+    {
+     "round": "6",
+     "scorerTeam": "C",
+     "scorer": "Joel Rocha",
+     "assist": "Baninho Vitalino",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "C"
+    },
+    {
+     "round": "6",
+     "scorerTeam": "B",
+     "scorer": "Edimilson",
+     "assist": "Edimilson",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "C"
+    },
+    {
+     "round": "SF1",
+     "scorerTeam": "A",
+     "scorer": "Paulo Cauas",
+     "assist": "Lucas Torres",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "A"
+    },
+    {
+     "round": "SF1",
+     "scorerTeam": "A",
+     "scorer": "Paulo Cauas",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "A"
+    },
+    {
+     "round": "SF2",
+     "scorerTeam": "C",
+     "scorer": "Baninho Vitalino",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "D",
+     "t2": "C"
+    },
+    {
+     "round": "SF2",
+     "scorerTeam": "C",
+     "scorer": "Joel Rocha",
+     "assist": "Baninho Vitalino",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "D",
+     "t2": "C"
+    },
+    {
+     "round": "SF2",
+     "scorerTeam": "D",
+     "scorer": "Tiago Vitalino",
+     "assist": "João Gabriel",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "D",
+     "t2": "C"
+    },
+    {
+     "round": "SF2",
+     "scorerTeam": "C",
+     "scorer": "Baninho Vitalino",
+     "assist": "Davi Vitalino",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "D",
+     "t2": "C"
+    },
+    {
+     "round": "3º",
+     "scorerTeam": "D",
+     "scorer": "João Ferraz",
+     "assist": "João Gabriel",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "3º",
+     "scorerTeam": "D",
+     "scorer": "João Gabriel",
+     "assist": "Edson Jordão",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "3º",
+     "scorerTeam": "B",
+     "scorer": "Danilo Ferriera",
+     "assist": "Paulinho Brasil",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "3º",
+     "scorerTeam": "D",
+     "scorer": "Tiago Vitalino",
+     "assist": "João Ferraz",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "Final",
+     "scorerTeam": "C",
+     "scorer": "Davi Vitalino",
+     "assist": "Joel Rocha",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "C"
+    },
+    {
+     "round": "Final",
+     "scorerTeam": "C",
+     "scorer": "Rafa Salgado",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "C"
+    }
+   ]
+  },
+  {
+   "date": "2026-06-08",
+   "teams": {
+    "A": {
+     "flag": "https://drive.google.com/uc?id=1f7-v3OCZDX63ydoZN6VR63Ycmh3iwG6S",
+     "crest": "https://drive.google.com/uc?id=1LcJ7HJVhKJYe28dUPnJaJtOMntGkZkz7",
+     "players": [
+      "Davi Vitalino",
+      "Valberto Enoc",
+      "Tiago Vitalino",
+      "André Salgado",
+      "Pedro"
+     ]
+    },
+    "B": {
+     "flag": "https://drive.google.com/uc?id=1-u6ku5qEJjbio1HDNFod6U6lrgNBYdz3",
+     "crest": "https://drive.google.com/uc?id=1t0FlWkGK6X4JJSZGv5Zo-vmsdxUdWuD_",
+     "players": [
+      "Edimilson",
+      "Paulinho Brasil",
+      "Daniel Oliveira",
+      "Joel Rocha",
+      "Rafa Salgado"
+     ]
+    },
+    "C": {
+     "flag": "https://drive.google.com/uc?id=1zZN6srM-GX3B3IOy2c4iyFVv9waZf-IG",
+     "crest": "https://drive.google.com/uc?id=136FyvL3aTe-MwZJLsuWs50pieWONSn65",
+     "players": [
+      "Baninho Vitalino",
+      "João Gabriel",
+      "Joabe",
+      "Filipe Albuquerque",
+      "Emanuel Ferreira"
+     ]
+    },
+    "D": {
+     "flag": "https://drive.google.com/uc?id=1Z-EO-YjMTuaRyVmaCbphP5JQEpiu74hK",
+     "crest": "https://drive.google.com/uc?id=1dBkmVVURWPCBwcEjt1kDk_YyoWnBp6P3",
+     "players": [
+      "Arthur",
+      "Marco Antônio",
+      "Lucas Torres",
+      "Elton",
+      "Eric Ezequiel"
+     ]
+    }
+   },
+   "groupMatches": [
+    {
+     "round": 1,
+     "home": "A",
+     "away": "B",
+     "homeGoals": 0,
+     "awayGoals": 0
+    },
+    {
+     "round": 2,
+     "home": "C",
+     "away": "D",
+     "homeGoals": 2,
+     "awayGoals": 1
+    },
+    {
+     "round": 3,
+     "home": "A",
+     "away": "C",
+     "homeGoals": 2,
+     "awayGoals": 3
+    },
+    {
+     "round": 4,
+     "home": "B",
+     "away": "D",
+     "homeGoals": 2,
+     "awayGoals": 1
+    },
+    {
+     "round": 5,
+     "home": "A",
+     "away": "D",
+     "homeGoals": 6,
+     "awayGoals": 0
+    },
+    {
+     "round": 6,
+     "home": "B",
+     "away": "C",
+     "homeGoals": 1,
+     "awayGoals": 0
+    }
+   ],
+   "knockoutMatches": [
+    {
+     "stage": "SF1",
+     "phase": "Semi-finais",
+     "home": "B",
+     "away": "D",
+     "homeGoals": 1,
+     "awayGoals": 0,
+     "homePens": 0,
+     "awayPens": 0
+    },
+    {
+     "stage": "SF2",
+     "phase": "Semi-finais",
+     "home": "C",
+     "away": "A",
+     "homeGoals": 1,
+     "awayGoals": 5,
+     "homePens": 0,
+     "awayPens": 0
+    },
+    {
+     "stage": "3º",
+     "phase": "Disputa 3º",
+     "home": "D",
+     "away": "C",
+     "homeGoals": 5,
+     "awayGoals": 3,
+     "homePens": 0,
+     "awayPens": 0
+    },
+    {
+     "stage": "Final",
+     "phase": "Final",
+     "home": "B",
+     "away": "A",
+     "homeGoals": 2,
+     "awayGoals": 1,
+     "homePens": 0,
+     "awayPens": 0
+    }
+   ],
+   "goals": [
+    {
+     "round": "2",
+     "scorerTeam": "C",
+     "scorer": "Baninho Vitalino",
+     "assist": "João Gabriel",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "D"
+    },
+    {
+     "round": "2",
+     "scorerTeam": "D",
+     "scorer": "Marco Antônio",
+     "assist": "Arthur",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "D"
+    },
+    {
+     "round": "2",
+     "scorerTeam": "C",
+     "scorer": "Baninho Vitalino",
+     "assist": "João Gabriel",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "D"
+    },
+    {
+     "round": "3",
+     "scorerTeam": "A",
+     "scorer": "Tiago Vitalino",
+     "assist": "Valberto Enoc",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "C"
+    },
+    {
+     "round": "3",
+     "scorerTeam": "C",
+     "scorer": "João Gabriel",
+     "assist": "Baninho Vitalino",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "C"
+    },
+    {
+     "round": "3",
+     "scorerTeam": "C",
+     "scorer": "Baninho Vitalino",
+     "assist": "Emanuel Ferreira",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "C"
+    },
+    {
+     "round": "3",
+     "scorerTeam": "A",
+     "scorer": "Valberto Enoc",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "C"
+    },
+    {
+     "round": "3",
+     "scorerTeam": "C",
+     "scorer": "Joabe",
+     "assist": "Baninho Vitalino",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "C"
+    },
+    {
+     "round": "4",
+     "scorerTeam": "D",
+     "scorer": "Marco Antônio",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "4",
+     "scorerTeam": "B",
+     "scorer": "Paulinho Brasil",
+     "assist": "Rafa Salgado",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "4",
+     "scorerTeam": "B",
+     "scorer": "Paulinho Brasil",
+     "assist": "Joel Rocha",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "5",
+     "scorerTeam": "A",
+     "scorer": "Valberto Enoc",
+     "assist": "Pedro",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "D"
+    },
+    {
+     "round": "5",
+     "scorerTeam": "A",
+     "scorer": "Tiago Vitalino",
+     "assist": "Valberto Enoc",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "D"
+    },
+    {
+     "round": "5",
+     "scorerTeam": "A",
+     "scorer": "Tiago Vitalino",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "D"
+    },
+    {
+     "round": "5",
+     "scorerTeam": "A",
+     "scorer": "Tiago Vitalino",
+     "assist": "Pedro",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "D"
+    },
+    {
+     "round": "5",
+     "scorerTeam": "A",
+     "scorer": "Tiago Vitalino",
+     "assist": "Pedro",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "D"
+    },
+    {
+     "round": "5",
+     "scorerTeam": "A",
+     "scorer": "Valberto Enoc",
+     "assist": "Tiago Vitalino",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "D"
+    },
+    {
+     "round": "6",
+     "scorerTeam": "B",
+     "scorer": "Daniel Oliveira",
+     "assist": "Paulinho Brasil",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "C"
+    },
+    {
+     "round": "SF2",
+     "scorerTeam": "A",
+     "scorer": "Tiago Vitalino",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "A"
+    },
+    {
+     "round": "SF2",
+     "scorerTeam": "A",
+     "scorer": "Tiago Vitalino",
+     "assist": "Pedro",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "A"
+    },
+    {
+     "round": "SF2",
+     "scorerTeam": "C",
+     "scorer": "João Gabriel",
+     "assist": "Filipe Albuquerque",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "A"
+    },
+    {
+     "round": "SF2",
+     "scorerTeam": "A",
+     "scorer": "Tiago Vitalino",
+     "assist": "Valberto Enoc",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "A"
+    },
+    {
+     "round": "SF2",
+     "scorerTeam": "A",
+     "scorer": "Tiago Vitalino",
+     "assist": "Valberto Enoc",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "A"
+    },
+    {
+     "round": "SF2",
+     "scorerTeam": "A",
+     "scorer": "Tiago Vitalino",
+     "assist": "Davi Vitalino",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "A"
+    },
+    {
+     "round": "SF1",
+     "scorerTeam": "B",
+     "scorer": "Edimilson",
+     "assist": "Rafa Salgado",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "3º",
+     "scorerTeam": "D",
+     "scorer": "Arthur",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "D",
+     "t2": "C"
+    },
+    {
+     "round": "3º",
+     "scorerTeam": "D",
+     "scorer": "Arthur",
+     "assist": "Elton",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "D",
+     "t2": "C"
+    },
+    {
+     "round": "3º",
+     "scorerTeam": "C",
+     "scorer": "Baninho Vitalino",
+     "assist": "João Gabriel",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "D",
+     "t2": "C"
+    },
+    {
+     "round": "3º",
+     "scorerTeam": "C",
+     "scorer": "Filipe Albuquerque",
+     "assist": "Emanuel Ferreira",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "D",
+     "t2": "C"
+    },
+    {
+     "round": "3º",
+     "scorerTeam": "C",
+     "scorer": "Emanuel Ferreira",
+     "assist": null,
+     "ownGoal": true,
+     "penalty": false,
+     "t1": "D",
+     "t2": "C"
+    },
+    {
+     "round": "3º",
+     "scorerTeam": "D",
+     "scorer": "Elton",
+     "assist": "Eric Ezequiel",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "D",
+     "t2": "C"
+    },
+    {
+     "round": "3º",
+     "scorerTeam": "C",
+     "scorer": "Emanuel Ferreira",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "D",
+     "t2": "C"
+    },
+    {
+     "round": "3º",
+     "scorerTeam": "D",
+     "scorer": "Eric Ezequiel",
+     "assist": "Elton",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "D",
+     "t2": "C"
+    },
+    {
+     "round": "Final",
+     "scorerTeam": "B",
+     "scorer": "Edimilson",
+     "assist": "Daniel Oliveira",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "A"
+    },
+    {
+     "round": "Final",
+     "scorerTeam": "A",
+     "scorer": "Tiago Vitalino",
+     "assist": "Davi Vitalino",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "A"
+    },
+    {
+     "round": "Final",
+     "scorerTeam": "B",
+     "scorer": "Daniel Oliveira",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "A"
+    }
+   ]
+  },
+  {
+   "date": "2026-06-15",
+   "teams": {
+    "A": {
+     "flag": "https://drive.google.com/uc?id=1f7-v3OCZDX63ydoZN6VR63Ycmh3iwG6S",
+     "crest": "https://drive.google.com/uc?id=1LcJ7HJVhKJYe28dUPnJaJtOMntGkZkz7",
+     "players": [
+      "Baninho Vitalino",
+      "Davi Vitalino",
+      "Joel Rocha",
+      "Eric Ezequiel",
+      "André Cavalcanti"
+     ]
+    },
+    "B": {
+     "flag": "https://drive.google.com/uc?id=1-u6ku5qEJjbio1HDNFod6U6lrgNBYdz3",
+     "crest": "https://drive.google.com/uc?id=1t0FlWkGK6X4JJSZGv5Zo-vmsdxUdWuD_",
+     "players": [
+      "Tiago Vitalino",
+      "Valberto Enoc",
+      "Lucas Torres",
+      "Emanuel Ferreira",
+      "André Salgado",
+      "Sanguinetti"
+     ]
+    },
+    "C": {
+     "flag": "https://drive.google.com/uc?id=1zZN6srM-GX3B3IOy2c4iyFVv9waZf-IG",
+     "crest": "https://drive.google.com/uc?id=136FyvL3aTe-MwZJLsuWs50pieWONSn65",
+     "players": [
+      "Daniel Oliveira",
+      "Paulo Cauas",
+      "Rafa Salgado",
+      "George",
+      "Joabe"
+     ]
+    },
+    "D": {
+     "flag": "https://drive.google.com/uc?id=1Z-EO-YjMTuaRyVmaCbphP5JQEpiu74hK",
+     "crest": "https://drive.google.com/uc?id=1dBkmVVURWPCBwcEjt1kDk_YyoWnBp6P3",
+     "players": [
+      "João Gabriel",
+      "Adrian",
+      "Paulo Viana",
+      "Filipe Albuquerque",
+      "Marco Antônio",
+      "Arthur"
+     ]
+    }
+   },
+   "groupMatches": [
+    {
+     "round": 1,
+     "home": "A",
+     "away": "B",
+     "homeGoals": 2,
+     "awayGoals": 2
+    },
+    {
+     "round": 2,
+     "home": "C",
+     "away": "D",
+     "homeGoals": 3,
+     "awayGoals": 1
+    },
+    {
+     "round": 3,
+     "home": "A",
+     "away": "C",
+     "homeGoals": 2,
+     "awayGoals": 1
+    },
+    {
+     "round": 4,
+     "home": "B",
+     "away": "D",
+     "homeGoals": 0,
+     "awayGoals": 3
+    },
+    {
+     "round": 5,
+     "home": "A",
+     "away": "D",
+     "homeGoals": 4,
+     "awayGoals": 0
+    },
+    {
+     "round": 6,
+     "home": "B",
+     "away": "C",
+     "homeGoals": 3,
+     "awayGoals": 3
+    }
+   ],
+   "knockoutMatches": [
+    {
+     "stage": "SF1",
+     "phase": "Semi-finais",
+     "home": "A",
+     "away": "B",
+     "homeGoals": 3,
+     "awayGoals": 2,
+     "homePens": 0,
+     "awayPens": 0
+    },
+    {
+     "stage": "SF2",
+     "phase": "Semi-finais",
+     "home": "C",
+     "away": "D",
+     "homeGoals": 2,
+     "awayGoals": 1,
+     "homePens": 0,
+     "awayPens": 0
+    },
+    {
+     "stage": "3º",
+     "phase": "Disputa 3º",
+     "home": "B",
+     "away": "D",
+     "homeGoals": 2,
+     "awayGoals": 4,
+     "homePens": 0,
+     "awayPens": 0
+    },
+    {
+     "stage": "Final",
+     "phase": "Final",
+     "home": "A",
+     "away": "C",
+     "homeGoals": 1,
+     "awayGoals": 2,
+     "homePens": 0,
+     "awayPens": 0
+    }
+   ],
+   "goals": [
+    {
+     "round": "1",
+     "scorerTeam": "B",
+     "scorer": "Valberto Enoc",
+     "assist": "André Salgado",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "B"
+    },
+    {
+     "round": "1",
+     "scorerTeam": "B",
+     "scorer": "Tiago Vitalino",
+     "assist": "Valberto Enoc",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "B"
+    },
+    {
+     "round": "1",
+     "scorerTeam": "A",
+     "scorer": "Davi Vitalino",
+     "assist": "Joel Rocha",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "B"
+    },
+    {
+     "round": "1",
+     "scorerTeam": "A",
+     "scorer": "Baninho Vitalino",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "B"
+    },
+    {
+     "round": "2",
+     "scorerTeam": "D",
+     "scorer": "Paulo Viana",
+     "assist": "Adrian",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "D"
+    },
+    {
+     "round": "2",
+     "scorerTeam": "C",
+     "scorer": "Paulo Cauas",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "D"
+    },
+    {
+     "round": "2",
+     "scorerTeam": "C",
+     "scorer": "Paulo Cauas",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "D"
+    },
+    {
+     "round": "2",
+     "scorerTeam": "C",
+     "scorer": "Paulo Cauas",
+     "assist": "Rafa Salgado",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "D"
+    },
+    {
+     "round": "3",
+     "scorerTeam": "A",
+     "scorer": "Davi Vitalino",
+     "assist": "Eric Ezequiel",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "C"
+    },
+    {
+     "round": "3",
+     "scorerTeam": "A",
+     "scorer": "Baninho Vitalino",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "C"
+    },
+    {
+     "round": "3",
+     "scorerTeam": "C",
+     "scorer": "Paulo Cauas",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "C"
+    },
+    {
+     "round": "4",
+     "scorerTeam": "D",
+     "scorer": "Filipe Albuquerque",
+     "assist": "Marco Antônio",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "4",
+     "scorerTeam": "D",
+     "scorer": "Paulo Viana",
+     "assist": "João Gabriel",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "4",
+     "scorerTeam": "D",
+     "scorer": "Adrian",
+     "assist": "Paulo Viana",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "5",
+     "scorerTeam": "A",
+     "scorer": "Eric Ezequiel",
+     "assist": "Joel Rocha",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "D"
+    },
+    {
+     "round": "5",
+     "scorerTeam": "A",
+     "scorer": "Joel Rocha",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "D"
+    },
+    {
+     "round": "5",
+     "scorerTeam": "A",
+     "scorer": "Joel Rocha",
+     "assist": "André Cavalcanti",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "D"
+    },
+    {
+     "round": "5",
+     "scorerTeam": "A",
+     "scorer": "Davi Vitalino",
+     "assist": "Eric Ezequiel",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "D"
+    },
+    {
+     "round": "6",
+     "scorerTeam": "C",
+     "scorer": "George",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "C"
+    },
+    {
+     "round": "6",
+     "scorerTeam": "B",
+     "scorer": "Tiago Vitalino",
+     "assist": "Valberto Enoc",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "C"
+    },
+    {
+     "round": "6",
+     "scorerTeam": "C",
+     "scorer": "Paulo Cauas",
+     "assist": "Arthur",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "C"
+    },
+    {
+     "round": "6",
+     "scorerTeam": "B",
+     "scorer": "Lucas Torres",
+     "assist": "Valberto Enoc",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "C"
+    },
+    {
+     "round": "6",
+     "scorerTeam": "C",
+     "scorer": "Daniel Oliveira",
+     "assist": "Paulo Cauas",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "C"
+    },
+    {
+     "round": "6",
+     "scorerTeam": "B",
+     "scorer": "Tiago Vitalino",
+     "assist": "Emanuel Ferreira",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "C"
+    },
+    {
+     "round": "SF2",
+     "scorerTeam": "C",
+     "scorer": "George",
+     "assist": "Rafa Salgado",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "D"
+    },
+    {
+     "round": "SF2",
+     "scorerTeam": "C",
+     "scorer": "Joabe",
+     "assist": "George",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "D"
+    },
+    {
+     "round": "SF2",
+     "scorerTeam": "D",
+     "scorer": "Marco Antônio",
+     "assist": "Arthur",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "C",
+     "t2": "D"
+    },
+    {
+     "round": "SF1",
+     "scorerTeam": "A",
+     "scorer": "Eric Ezequiel",
+     "assist": "André Cavalcanti",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "B"
+    },
+    {
+     "round": "SF1",
+     "scorerTeam": "A",
+     "scorer": "Baninho Vitalino",
+     "assist": "André Cavalcanti",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "B"
+    },
+    {
+     "round": "SF1",
+     "scorerTeam": "B",
+     "scorer": "Tiago Vitalino",
+     "assist": "Valberto Enoc",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "B"
+    },
+    {
+     "round": "SF1",
+     "scorerTeam": "B",
+     "scorer": "Valberto Enoc",
+     "assist": "Lucas Torres",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "B"
+    },
+    {
+     "round": "SF1",
+     "scorerTeam": "A",
+     "scorer": "Eric Ezequiel",
+     "assist": "Joel Rocha",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "B"
+    },
+    {
+     "round": "3º",
+     "scorerTeam": "D",
+     "scorer": "Adrian",
+     "assist": "Paulo Viana",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "3º",
+     "scorerTeam": "D",
+     "scorer": "Filipe Albuquerque",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "3º",
+     "scorerTeam": "D",
+     "scorer": "Marco Antônio",
+     "assist": "Filipe Albuquerque",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "3º",
+     "scorerTeam": "D",
+     "scorer": "Adrian",
+     "assist": "Paulo Viana",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "3º",
+     "scorerTeam": "B",
+     "scorer": "Tiago Vitalino",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "3º",
+     "scorerTeam": "B",
+     "scorer": "Tiago Vitalino",
+     "assist": "Sanguinetti",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "B",
+     "t2": "D"
+    },
+    {
+     "round": "Final",
+     "scorerTeam": "A",
+     "scorer": "Baninho Vitalino",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "C"
+    },
+    {
+     "round": "Final",
+     "scorerTeam": "C",
+     "scorer": "Paulo Cauas",
+     "assist": null,
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "C"
+    },
+    {
+     "round": "Final",
+     "scorerTeam": "C",
+     "scorer": "Tiago Vitalino",
+     "assist": "Paulo Cauas",
+     "ownGoal": false,
+     "penalty": false,
+     "t1": "A",
+     "t2": "C"
+    }
+   ]
+  }
+ ]
+}
