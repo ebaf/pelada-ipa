@@ -95,6 +95,7 @@ export default async function PeladaDashboard({
   }
 
   const topScorer = [...playerStats].sort((a, b) => totalGoals(b.totals) - totalGoals(a.totals))[0];
+  const topAssist = [...playerStats].sort((a, b) => b.totals.assists - a.totals.assists)[0];
 
   return (
     <div className="space-y-7">
@@ -176,11 +177,18 @@ export default async function PeladaDashboard({
               <h2 className="text-lg font-bold">Destaques do dia</h2>
               <NotaInfo />
             </div>
-            {topScorer && totalGoals(topScorer.totals) > 0 && (
-              <span className="chip">
-                👟 Artilheiro: {topScorer.name} ({totalGoals(topScorer.totals)})
-              </span>
-            )}
+            <div className="flex flex-wrap gap-2">
+              {topScorer && totalGoals(topScorer.totals) > 0 && (
+                <span className="chip">
+                  👟 Artilheiro: {topScorer.name} ({totalGoals(topScorer.totals)})
+                </span>
+              )}
+              {topAssist && topAssist.totals.assists > 0 && (
+                <span className="chip">
+                  🎩 Garçom: {topAssist.name} ({topAssist.totals.assists})
+                </span>
+              )}
+            </div>
           </div>
           <div className="card overflow-hidden">
             <ul className="divide-y divide-border">
