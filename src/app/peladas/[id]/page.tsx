@@ -69,21 +69,29 @@ export default async function PeladaDashboard({
   const data = await getChampionshipView(id);
   if (!data) notFound();
 
-  const { championship, standings, groupMatches, sf1, sf2, third, final, playerStats, flags } = data;
+  const { championship, teams, standings, groupMatches, sf1, sf2, third, final, playerStats, flags } = data;
+
+  const playersByLabel = new Map(teams.map((t) => [t.label, t.members.map((m) => m.name)]));
 
   // Pódio final
-  const podium: { rank: number; label: string }[] = [];
+  const podium: { rank: number; label: string; players: string[] }[] = [];
   if (final?.finished && final.winnerTeamId) {
     const loserFinal =
       final.winnerTeamId === final.homeTeamId ? final.awayLabel : final.homeLabel;
     const winnerLabel = final.winnerTeamId === final.homeTeamId ? final.homeLabel : final.awayLabel;
-    podium.push({ rank: 1, label: winnerLabel }, { rank: 2, label: loserFinal });
+    podium.push(
+      { rank: 1, label: winnerLabel, players: playersByLabel.get(winnerLabel) ?? [] },
+      { rank: 2, label: loserFinal, players: playersByLabel.get(loserFinal) ?? [] },
+    );
   }
   if (third?.finished && third.winnerTeamId) {
     const loserThird =
       third.winnerTeamId === third.homeTeamId ? third.awayLabel : third.homeLabel;
     const winnerThird = third.winnerTeamId === third.homeTeamId ? third.homeLabel : third.awayLabel;
-    podium.push({ rank: 3, label: winnerThird }, { rank: 4, label: loserThird });
+    podium.push(
+      { rank: 3, label: winnerThird, players: playersByLabel.get(winnerThird) ?? [] },
+      { rank: 4, label: loserThird, players: playersByLabel.get(loserThird) ?? [] },
+    );
   }
 
   const topScorer = [...playerStats].sort((a, b) => totalGoals(b.totals) - totalGoals(a.totals))[0];
@@ -117,12 +125,19 @@ export default async function PeladaDashboard({
           </div>
           <ul className="divide-y divide-border">
             {podium.map((p) => (
-              <li key={p.rank} className="flex items-center gap-3 px-4 py-2.5">
-                <span className="w-7 text-center text-xl">
+              <li key={p.rank} className="flex items-start gap-3 px-4 py-2.5">
+                <span className="w-7 shrink-0 text-center text-xl">
                   {p.rank === 1 ? "🥇" : p.rank === 2 ? "🥈" : p.rank === 3 ? "🥉" : "4º"}
                 </span>
-                <TeamBadge label={p.label} className="!h-6 !w-6 text-xs" />
-                <span className="font-semibold">Time {p.label}</span>
+                <TeamBadge label={p.label} className="!mt-0.5 !h-6 !w-6 shrink-0 text-xs" />
+                <div>
+                  <div className="font-semibold">Time {p.label}</div>
+                  {p.players.length > 0 && (
+                    <div className="mt-0.5 text-xs text-muted leading-snug">
+                      {p.players.join(" · ")}
+                    </div>
+                  )}
+                </div>
               </li>
             ))}
           </ul>
