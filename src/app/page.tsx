@@ -62,11 +62,18 @@ export default async function HomePage() {
                     )}
                     <div className="mt-1.5">
                       {c.champion ? (
-                        <span className="inline-flex items-center gap-1.5 text-sm">
-                          <span>🏆</span> Campeão:{" "}
-                          <TeamBadge label={c.champion} className="!h-5 !w-5 text-[11px]" />
-                          <span className="font-semibold">Time {c.champion}</span>
-                        </span>
+                        <>
+                          <span className="inline-flex items-center gap-1.5 text-sm">
+                            <span>🏆</span> Campeão:{" "}
+                            <TeamBadge label={c.champion} className="!h-5 !w-5 text-[11px]" />
+                            <span className="font-semibold">Time {c.champion}</span>
+                          </span>
+                          {c.championPlayers.length > 0 && (
+                            <div className="mt-1 text-xs text-muted leading-snug">
+                              {c.championPlayers.join(" · ")}
+                            </div>
+                          )}
+                        </>
                       ) : c.finalUndecided ? (
                         <span className="chip border-gold/40 text-gold">
                           🏁 Pênaltis pendentes

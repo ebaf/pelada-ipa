@@ -122,7 +122,16 @@ export async function listChampionships() {
   const champs = await prisma.championship.findMany({
     orderBy: { date: "desc" },
     include: {
-      teams: { select: { id: true, label: true } },
+      teams: {
+        select: {
+          id: true,
+          label: true,
+          members: {
+            orderBy: { slot: "asc" },
+            select: { player: { select: { name: true } } },
+          },
+        },
+      },
       matches: {
         select: {
           id: true,
@@ -155,9 +164,10 @@ export async function listChampionships() {
     const labelById = new Map(c.teams.map((t) => [t.id, t.label]));
     const final = c.matches.find((m) => m.stage === "FINAL");
     let champion: string | null = null;
+    let winnerId: string | null = null;
     if (final && final.finished) {
       const { home, away } = getScore(scoreMap, final.id, final.homeTeamId, final.awayTeamId);
-      const winner = knockoutWinner({
+      winnerId = knockoutWinner({
         homeTeamId: final.homeTeamId,
         awayTeamId: final.awayTeamId,
         homeScore: home,
@@ -165,9 +175,11 @@ export async function listChampionships() {
         homePens: final.homePens,
         awayPens: final.awayPens,
       });
-      champion = winner ? (labelById.get(winner) ?? null) : null;
+      champion = winnerId ? (labelById.get(winnerId) ?? null) : null;
     }
     const finalUndecided = !!final && final.finished && champion === null;
+    const championTeam = winnerId ? c.teams.find((t) => t.id === winnerId) : null;
+    const championPlayers = championTeam?.members.map((m) => m.player.name) ?? [];
     return {
       id: c.id,
       name: c.name,
@@ -177,6 +189,7 @@ export async function listChampionships() {
       finishedCount: c.matches.filter((m) => m.finished).length,
       champion,
       finalUndecided,
+      championPlayers,
     };
   });
 }
