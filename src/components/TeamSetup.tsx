@@ -134,21 +134,22 @@ export function TeamSetup({
               )}
             </div>
 
-            <select
-              className="select"
-              value=""
-              onChange={(e) => {
-                add(label, e.target.value);
-                e.target.value = "";
-              }}
-            >
-              <option value="">+ Adicionar jogador...</option>
-              {available.map((p) => (
-                <option key={p.id} value={p.id}>
-                  {p.name}
-                </option>
-              ))}
-            </select>
+            {available.length > 0 && (
+              <div>
+                <p className="mb-1.5 text-xs text-muted">Disponíveis — toque para adicionar:</p>
+                <div className="flex flex-wrap gap-1.5">
+                  {available.map((p) => (
+                    <button
+                      key={p.id}
+                      onClick={() => add(label, p.id)}
+                      className="inline-flex items-center rounded-full border border-border bg-surface px-2.5 py-1 text-sm hover:bg-surface-2 active:scale-95 transition-transform"
+                    >
+                      + {p.name}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
 
             <details className="mt-2">
               <summary className="cursor-pointer text-xs text-muted">Escudo (URL)</summary>
