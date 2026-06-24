@@ -28,6 +28,7 @@ export function TeamSetup({
   const router = useRouter();
   const [pending, start] = useTransition();
   const [open, setOpen] = useState(!locked);
+  const [editing, setEditing] = useState<string | null>(null);
 
   const byLabel = new Map(teams.map((t) => [t.label, t]));
   const [rosters, setRosters] = useState<Record<string, string[]>>(() => {
@@ -104,6 +105,7 @@ export function TeamSetup({
   return (
     <div className="space-y-3">
       {TEAM_LABELS.map((label) => {
+        const isEditing = editing === label;
         const available = allPlayers.filter((p) => !assigned.has(p.id));
         return (
           <div key={label} className="card p-4">
@@ -134,19 +136,38 @@ export function TeamSetup({
               )}
             </div>
 
-            {available.length > 0 && (
-              <div>
-                <p className="mb-1.5 text-xs text-muted">Disponíveis — toque para adicionar:</p>
-                <div className="flex flex-wrap gap-1.5">
+            {!isEditing && (
+              <button
+                className="btn btn-ghost btn-sm w-full"
+                onClick={() => setEditing(label)}
+                disabled={available.length === 0}
+              >
+                + Adicionar jogadores
+              </button>
+            )}
+
+            {isEditing && (
+              <div className="mt-1">
+                <div className="mb-1.5 flex items-center justify-between">
+                  <p className="text-xs text-muted">Toque para adicionar:</p>
+                  <button className="text-xs text-muted underline" onClick={() => setEditing(null)}>
+                    Fechar
+                  </button>
+                </div>
+                <div className="divide-y divide-border rounded-lg border border-border">
                   {available.map((p) => (
                     <button
                       key={p.id}
                       onClick={() => add(label, p.id)}
-                      className="inline-flex items-center rounded-full border border-border bg-surface px-2.5 py-1 text-sm hover:bg-surface-2 active:scale-95 transition-transform"
+                      className="flex w-full items-center px-3 py-2.5 text-sm hover:bg-surface-2 active:bg-surface-2 first:rounded-t-lg last:rounded-b-lg"
                     >
-                      + {p.name}
+                      <span className="mr-2 text-muted">+</span>
+                      {p.name}
                     </button>
                   ))}
+                  {available.length === 0 && (
+                    <p className="px-3 py-2.5 text-sm text-muted">Todos os jogadores escalados.</p>
+                  )}
                 </div>
               </div>
             )}
