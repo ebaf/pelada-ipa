@@ -33,9 +33,9 @@ export async function createPlayer(name: string) {
   if (!trimmed) return { error: "Informe o nome do jogador." };
   const existing = await prisma.player.findUnique({ where: { name: trimmed } });
   if (existing) return { error: "Já existe um jogador com esse nome." };
-  await prisma.player.create({ data: { name: trimmed } });
+  const player = await prisma.player.create({ data: { name: trimmed } });
   revalidateAll();
-  return { ok: true };
+  return { ok: true, id: player.id, name: player.name };
 }
 
 export async function renamePlayer(id: string, name: string) {
