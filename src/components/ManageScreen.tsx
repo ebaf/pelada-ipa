@@ -29,6 +29,36 @@ export function ManageScreen({
   const [err, setErr] = useState<string | null>(null);
   const { championship, teams, groupMatches, sf1, sf2, third, final, standings, flags } = data;
 
+  const defaultSfPicks =
+    standings.length >= 4
+      ? {
+          sf1Home: standings[0].teamId,
+          sf1Away: standings[3].teamId,
+          sf2Home: standings[1].teamId,
+          sf2Away: standings[2].teamId,
+        }
+      : null;
+  const [sfPicksOverride, setSfPicksOverride] = useState<typeof defaultSfPicks>(null);
+  const sfPicks = sfPicksOverride ?? defaultSfPicks;
+
+  function updateSfPick(key: "sf1Home" | "sf1Away" | "sf2Home" | "sf2Away", value: string) {
+    setSfPicksOverride((prev) => ({ ...(prev ?? defaultSfPicks!), [key]: value }));
+  }
+
+  const sfPicksCustomized =
+    sfPicksOverride !== null &&
+    defaultSfPicks !== null &&
+    (sfPicksOverride.sf1Home !== defaultSfPicks.sf1Home ||
+      sfPicksOverride.sf1Away !== defaultSfPicks.sf1Away ||
+      sfPicksOverride.sf2Home !== defaultSfPicks.sf2Home ||
+      sfPicksOverride.sf2Away !== defaultSfPicks.sf2Away);
+
+  const sfPicksValid =
+    sfPicks !== null &&
+    new Set([sfPicks.sf1Home, sfPicks.sf1Away, sfPicks.sf2Home, sfPicks.sf2Away]).size === 4;
+
+  const rankByTeam = new Map(standings.map((s) => [s.teamId, s.rank]));
+
   const membersByTeam = new Map(teams.map((t) => [t.id, t.members.map((m) => ({ id: m.id, name: m.name }))]));
   const members = (teamId: string) => membersByTeam.get(teamId) ?? [];
 
@@ -105,14 +135,72 @@ export function ManageScreen({
           </div>
 
           {!flags.hasKnockouts &&
-            (flags.allGroupFinished ? (
-              <button
-                className="btn btn-primary mt-4 w-full"
-                disabled={pending}
-                onClick={() => run(() => generateKnockouts(championship.id))}
-              >
-                🏟️ Gerar eliminatórias (1º×4º, 2º×3º)
-              </button>
+            (flags.allGroupFinished && sfPicks ? (
+              <div className="mt-4 space-y-3">
+                <h3 className="text-sm font-bold uppercase tracking-wide text-muted">
+                  Chaves das semifinais
+                </h3>
+                <div className="card p-3 space-y-3">
+                  {(
+                    [
+                      { label: "Semifinal 1", homeKey: "sf1Home", awayKey: "sf1Away" },
+                      { label: "Semifinal 2", homeKey: "sf2Home", awayKey: "sf2Away" },
+                    ] as const
+                  ).map(({ label, homeKey, awayKey }) => (
+                    <div key={label} className="flex items-center gap-2 flex-wrap">
+                      <span className="text-sm font-semibold w-24 shrink-0">{label}</span>
+                      <select
+                        className="flex-1 min-w-0 rounded border border-border bg-surface px-2 py-1 text-sm"
+                        value={sfPicks[homeKey]}
+                        onChange={(e) => updateSfPick(homeKey, e.target.value)}
+                      >
+                        {teams.map((t) => (
+                          <option key={t.id} value={t.id}>
+                            {rankByTeam.get(t.id)}º · {t.label}
+                          </option>
+                        ))}
+                      </select>
+                      <span className="text-muted text-sm">×</span>
+                      <select
+                        className="flex-1 min-w-0 rounded border border-border bg-surface px-2 py-1 text-sm"
+                        value={sfPicks[awayKey]}
+                        onChange={(e) => updateSfPick(awayKey, e.target.value)}
+                      >
+                        {teams.map((t) => (
+                          <option key={t.id} value={t.id}>
+                            {rankByTeam.get(t.id)}º · {t.label}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  ))}
+                  {!sfPicksValid && (
+                    <p className="text-xs text-danger">Cada time deve aparecer em apenas uma semifinal.</p>
+                  )}
+                  {sfPicksCustomized && (
+                    <button
+                      className="text-xs text-muted underline"
+                      onClick={() => setSfPicksOverride(null)}
+                    >
+                      Restaurar ordem da classificação
+                    </button>
+                  )}
+                </div>
+                <button
+                  className="btn btn-primary w-full"
+                  disabled={pending || !sfPicksValid}
+                  onClick={() =>
+                    run(() =>
+                      generateKnockouts(
+                        championship.id,
+                        sfPicksCustomized ? sfPicks : undefined,
+                      ),
+                    )
+                  }
+                >
+                  🏟️ Gerar eliminatórias
+                </button>
+              </div>
             ) : (
               <p className="mt-4 text-center text-sm text-muted">
                 Encerre as 6 partidas da fase de grupos para gerar as eliminatórias.

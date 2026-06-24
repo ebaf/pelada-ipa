@@ -263,8 +263,11 @@ async function standingsFor(championshipId: string) {
   return computeStandings(teams, results);
 }
 
-/** Cria SF1 (1º x 4º) e SF2 (2º x 3º) a partir da classificação. */
-export async function generateKnockouts(championshipId: string) {
+/** Cria SF1 e SF2. Se `custom` for passado, usa os times indicados; caso contrário, usa a classificação (1º×4º, 2º×3º). */
+export async function generateKnockouts(
+  championshipId: string,
+  custom?: { sf1Home: string; sf1Away: string; sf2Home: string; sf2Away: string },
+) {
   const groupCount = await prisma.match.count({
     where: { championshipId, stage: "GROUP", finished: true },
   });
@@ -276,14 +279,32 @@ export async function generateKnockouts(championshipId: string) {
   });
   if (existing > 0) return { error: "As semifinais já foram geradas." };
 
-  const table = await standingsFor(championshipId);
-  if (table.length < 4) return { error: "É preciso ter 4 times." };
-  const [first, second, third, fourth] = table;
+  let sf1Home: string, sf1Away: string, sf2Home: string, sf2Away: string;
+
+  if (custom) {
+    const teamIds = await prisma.team
+      .findMany({ where: { championshipId }, select: { id: true } })
+      .then((ts) => new Set(ts.map((t) => t.id)));
+    const ids = [custom.sf1Home, custom.sf1Away, custom.sf2Home, custom.sf2Away];
+    if (ids.some((id) => !teamIds.has(id)))
+      return { error: "Time inválido selecionado." };
+    if (new Set(ids).size !== 4)
+      return { error: "Cada time deve aparecer em apenas uma semifinal." };
+    ({ sf1Home, sf1Away, sf2Home, sf2Away } = custom);
+  } else {
+    const table = await standingsFor(championshipId);
+    if (table.length < 4) return { error: "É preciso ter 4 times." };
+    const [first, second, third, fourth] = table;
+    sf1Home = first.teamId;
+    sf1Away = fourth.teamId;
+    sf2Home = second.teamId;
+    sf2Away = third.teamId;
+  }
 
   await prisma.match.createMany({
     data: [
-      { championshipId, stage: "SF1", homeTeamId: first.teamId, awayTeamId: fourth.teamId },
-      { championshipId, stage: "SF2", homeTeamId: second.teamId, awayTeamId: third.teamId },
+      { championshipId, stage: "SF1", homeTeamId: sf1Home, awayTeamId: sf1Away },
+      { championshipId, stage: "SF2", homeTeamId: sf2Home, awayTeamId: sf2Away },
     ],
   });
   revalidateAll(championshipId);
