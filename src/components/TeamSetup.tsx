@@ -45,12 +45,28 @@ export function TeamSetup({
   const nameById = new Map(allPlayers.map((p) => [p.id, p.name]));
   const assigned = new Set(Object.values(rosters).flat());
 
+  function saveRosters(newRosters: Record<string, string[]>) {
+    const payload: RosterInput[] = TEAM_LABELS.map((label) => ({
+      label,
+      crestUrl: crests[label] || null,
+      playerIds: newRosters[label],
+    }));
+    start(async () => {
+      await saveTeams(championshipId, payload);
+      router.refresh();
+    });
+  }
+
   function add(label: string, playerId: string) {
     if (!playerId) return;
-    setRosters((r) => ({ ...r, [label]: [...r[label], playerId] }));
+    const next = { ...rosters, [label]: [...rosters[label], playerId] };
+    setRosters(next);
+    saveRosters(next);
   }
   function remove(label: string, playerId: string) {
-    setRosters((r) => ({ ...r, [label]: r[label].filter((id) => id !== playerId) }));
+    const next = { ...rosters, [label]: rosters[label].filter((id) => id !== playerId) };
+    setRosters(next);
+    saveRosters(next);
   }
 
   function save() {
@@ -185,9 +201,12 @@ export function TeamSetup({
         );
       })}
 
-      <button className="btn btn-primary w-full" onClick={save} disabled={pending}>
-        {pending ? "Salvando..." : "Salvar times"}
-      </button>
+      <div className="flex items-center gap-2">
+        <button className="btn btn-primary flex-1" onClick={save} disabled={pending}>
+          {pending ? "Salvando..." : "Salvar times"}
+        </button>
+        {pending && <span className="animate-pulse text-xs text-muted">salvando…</span>}
+      </div>
       {!locked && (
         <p className="text-center text-xs text-muted">
           Ao salvar pela primeira vez, as 6 partidas da fase de grupos são criadas.
