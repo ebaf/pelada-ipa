@@ -2,7 +2,7 @@
 
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
-import { saveTeams, RosterInput } from "@/lib/actions";
+import { saveTeams, createPlayer, RosterInput } from "@/lib/actions";
 import { TeamBadge } from "@/components/TeamBadge";
 import { TEAM_LABELS } from "@/lib/format";
 
@@ -29,6 +29,10 @@ export function TeamSetup({
   const [pending, start] = useTransition();
   const [open, setOpen] = useState(!locked);
   const [editing, setEditing] = useState<string | null>(null);
+  const [players, setPlayers] = useState<Player[]>(allPlayers);
+  const [newName, setNewName] = useState("");
+  const [newError, setNewError] = useState("");
+  const [creating, startCreating] = useTransition();
 
   const byLabel = new Map(teams.map((t) => [t.label, t]));
   const [rosters, setRosters] = useState<Record<string, string[]>>(() => {
@@ -42,7 +46,7 @@ export function TeamSetup({
     return init;
   });
 
-  const nameById = new Map(allPlayers.map((p) => [p.id, p.name]));
+  const nameById = new Map(players.map((p) => [p.id, p.name]));
   const assigned = new Set(Object.values(rosters).flat());
 
   function saveRosters(newRosters: Record<string, string[]>) {
@@ -67,6 +71,25 @@ export function TeamSetup({
     const next = { ...rosters, [label]: rosters[label].filter((id) => id !== playerId) };
     setRosters(next);
     saveRosters(next);
+  }
+
+  function handleCreateAndAdd(label: string) {
+    const name = newName.trim();
+    if (!name) return;
+    startCreating(async () => {
+      const result = await createPlayer(name);
+      if ("error" in result) {
+        setNewError(result.error ?? "Erro ao criar jogador.");
+        return;
+      }
+      const newPlayer = { id: result.id, name: result.name };
+      setPlayers((prev) => [...prev, newPlayer]);
+      setNewName("");
+      setNewError("");
+      const next = { ...rosters, [label]: [...rosters[label], newPlayer.id] };
+      setRosters(next);
+      saveRosters(next);
+    });
   }
 
   function save() {
@@ -122,7 +145,7 @@ export function TeamSetup({
     <div className="space-y-3">
       {TEAM_LABELS.map((label) => {
         const isEditing = editing === label;
-        const available = allPlayers.filter((p) => !assigned.has(p.id));
+        const available = players.filter((p) => !assigned.has(p.id));
         return (
           <div key={label} className="card p-4">
             <div className="mb-2 flex items-center gap-2">
@@ -155,8 +178,7 @@ export function TeamSetup({
             {!isEditing && (
               <button
                 className="btn btn-ghost btn-sm w-full"
-                onClick={() => setEditing(label)}
-                disabled={available.length === 0}
+                onClick={() => { setEditing(label); setNewName(""); setNewError(""); }}
               >
                 + Adicionar jogadores
               </button>
@@ -181,9 +203,27 @@ export function TeamSetup({
                       {p.name}
                     </button>
                   ))}
-                  {available.length === 0 && (
-                    <p className="px-3 py-2.5 text-sm text-muted">Todos os jogadores escalados.</p>
-                  )}
+                  <div className="p-2">
+                    <p className="mb-1.5 text-xs text-muted">Novo jogador:</p>
+                    <div className="flex gap-2">
+                      <input
+                        className="input flex-1 text-sm"
+                        placeholder="Nome do jogador"
+                        value={newName}
+                        onChange={(e) => { setNewName(e.target.value); setNewError(""); }}
+                        onKeyDown={(e) => e.key === "Enter" && !creating && handleCreateAndAdd(label)}
+                        disabled={creating}
+                      />
+                      <button
+                        className="btn btn-ghost btn-sm shrink-0"
+                        onClick={() => handleCreateAndAdd(label)}
+                        disabled={creating || !newName.trim()}
+                      >
+                        {creating ? "…" : "Criar"}
+                      </button>
+                    </div>
+                    {newError && <p className="mt-1 text-xs text-danger">{newError}</p>}
+                  </div>
                 </div>
               </div>
             )}
