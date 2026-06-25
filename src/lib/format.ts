@@ -1,16 +1,8 @@
 export const STAGE_LABEL: Record<string, string> = {
   GROUP: "Fase de grupos",
-  SF1: "Semifinal 1",
-  SF2: "Semifinal 2",
-  THIRD: "Disputa de 3º",
-  FINAL: "Final",
-};
-
-export const STAGE_SHORT: Record<string, string> = {
-  GROUP: "Grupos",
   SF1: "SF1",
   SF2: "SF2",
-  THIRD: "3º lugar",
+  THIRD: "3º",
   FINAL: "Final",
 };
 
