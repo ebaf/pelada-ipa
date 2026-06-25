@@ -62,6 +62,11 @@ export function ManageScreen({
   const membersByTeam = new Map(teams.map((t) => [t.id, t.members.map((m) => ({ id: m.id, name: m.name }))]));
   const members = (teamId: string) => membersByTeam.get(teamId) ?? [];
 
+  const firstUnfinishedGroup = groupMatches.find((m) => !m.finished);
+  const [activeMatchId, setActiveMatchId] = useState<string | null>(
+    firstUnfinishedGroup?.id ?? groupMatches[0]?.id ?? null,
+  );
+
   function run(
     fn: () => Promise<{ error?: string; ok?: boolean; id?: string } | void>,
     afterPush?: string,
@@ -121,6 +126,8 @@ export function ManageScreen({
                 awayMembers={members(m.awayTeamId)}
                 allPlayers={allPlayers}
                 champ={championship}
+                isActive={activeMatchId === m.id}
+                onActivate={() => setActiveMatchId(m.id)}
               />
             ))}
           </div>
