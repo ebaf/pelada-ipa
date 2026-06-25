@@ -67,6 +67,12 @@ export function ManageScreen({
     firstUnfinishedGroup?.id ?? groupMatches[0]?.id ?? null,
   );
 
+  const knockoutMatches = [sf1, sf2, third, final].filter(Boolean);
+  const firstUnfinishedKnockout = knockoutMatches.find((m) => !m!.finished);
+  const [activeKnockoutId, setActiveKnockoutId] = useState<string | null>(
+    firstUnfinishedKnockout?.id ?? knockoutMatches[0]?.id ?? null,
+  );
+
   function run(
     fn: () => Promise<{ error?: string; ok?: boolean; id?: string } | void>,
     afterPush?: string,
@@ -228,6 +234,8 @@ export function ManageScreen({
                 awayMembers={members(sf1.awayTeamId)}
                 allPlayers={allPlayers}
                 champ={championship}
+                isActive={activeKnockoutId === sf1.id}
+                onActivate={() => setActiveKnockoutId(sf1.id)}
               />
             )}
             {sf2 && (
@@ -237,6 +245,8 @@ export function ManageScreen({
                 awayMembers={members(sf2.awayTeamId)}
                 allPlayers={allPlayers}
                 champ={championship}
+                isActive={activeKnockoutId === sf2.id}
+                onActivate={() => setActiveKnockoutId(sf2.id)}
               />
             )}
           </div>
@@ -265,6 +275,8 @@ export function ManageScreen({
                   awayMembers={members(third.awayTeamId)}
                   allPlayers={allPlayers}
                   champ={championship}
+                  isActive={activeKnockoutId === third.id}
+                  onActivate={() => setActiveKnockoutId(third.id)}
                 />
               )}
               {final && (
@@ -274,6 +286,8 @@ export function ManageScreen({
                   awayMembers={members(final.awayTeamId)}
                   allPlayers={allPlayers}
                   champ={championship}
+                  isActive={activeKnockoutId === final.id}
+                  onActivate={() => setActiveKnockoutId(final.id)}
                 />
               )}
             </div>
