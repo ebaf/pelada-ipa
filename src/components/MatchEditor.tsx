@@ -28,6 +28,7 @@ export function MatchEditor({
   champ,
   isActive,
   onActivate,
+  onClose,
 }: {
   match: MatchView;
   homeMembers: Member[];
@@ -36,6 +37,7 @@ export function MatchEditor({
   champ: { name: string | null; date: Date | string };
   isActive?: boolean;
   onActivate?: () => void;
+  onClose?: () => void;
 }) {
   const router = useRouter();
   const [pending, start] = useTransition();
@@ -50,6 +52,7 @@ export function MatchEditor({
   const [assistId, setAssistId] = useState("");
 
   // --- estado da disputa de pênaltis ---
+  const [showPens, setShowPens] = useState(match.homePens !== null);
   const [hp, setHp] = useState(match.homePens?.toString() ?? "");
   const [ap, setAp] = useState(match.awayPens?.toString() ?? "");
 
@@ -158,8 +161,10 @@ export function MatchEditor({
   }
 
   function toggleFinished() {
+    const wasFinished = match.finished;
     start(async () => {
-      await setMatchFinished(match.id, !match.finished);
+      await setMatchFinished(match.id, !wasFinished);
+      if (!wasFinished) onClose?.();
       router.refresh();
     });
   }
@@ -238,13 +243,16 @@ export function MatchEditor({
 
   if (isActive === false) {
     return (
-      <button
-        onClick={onActivate}
-        className="card w-full p-3 text-left opacity-50 transition-opacity hover:opacity-100"
-      >
-        <div className="flex items-center gap-2">
+      <div className="card">
+        <button
+          onClick={() => {
+            if (match.finished) toggleFinished();
+            onActivate?.();
+          }}
+          className="flex w-full items-center gap-2 p-3 text-left opacity-50 transition-opacity hover:opacity-100"
+        >
           <span className="chip shrink-0 text-xs">
-            {isKnockout ? STAGE_LABEL[match.stage] : `Rodada ${match.round}`}
+            {isKnockout ? STAGE_LABEL[match.stage] : `FG${match.round}`}
           </span>
           <div className="flex flex-1 items-center justify-center gap-2">
             <span className="flex items-center gap-1 text-sm font-semibold">
@@ -260,25 +268,25 @@ export function MatchEditor({
             </span>
           </div>
           {match.finished && (
-            <span className="chip shrink-0 border-primary/40 text-primary text-xs">✓</span>
+            <span className="chip shrink-0 border-primary/40 text-primary text-xs !p-0">✓</span>
           )}
-        </div>
-      </button>
+        </button>
+        {match.finished && (
+          <div className="border-t border-border px-3 pb-2 pt-1.5">
+            <ShareMatchButton text={formatMatchForWhatsApp(match, champ)} />
+          </div>
+        )}
+      </div>
     );
   }
 
   return (
-    <div className={`card p-4 ${match.finished ? "" : "border-dashed"}`}>
+    <div className="card border-dashed p-4">
       {/* Cabeçalho */}
-      <div className="mb-1 flex items-center justify-between">
+      <div className="mb-1">
         <span className="chip">
-          {isKnockout ? STAGE_LABEL[match.stage] : `Rodada ${match.round}`}
+          {isKnockout ? STAGE_LABEL[match.stage] : `FG${match.round}`}
         </span>
-        {match.finished ? (
-          <span className="chip border-primary/40 text-primary">✓ Encerrada</span>
-        ) : (
-          <span className="chip">Em aberto</span>
-        )}
       </div>
 
       <div className="flex items-center justify-center gap-3 py-1">
@@ -365,7 +373,7 @@ export function MatchEditor({
       )}
 
       {/* Pênaltis (eliminatórias empatadas) */}
-      {isKnockout && tied && (
+      {isKnockout && tied && showPens && (
         <div className="mt-3 card-2 p-3">
           <div className="label">Disputa de pênaltis</div>
           <div className="flex items-center justify-center gap-2">
@@ -532,20 +540,25 @@ export function MatchEditor({
           <button className="btn btn-ghost btn-sm" onClick={openExtForm} disabled={pending}>
             👤
           </button>
-          {match.finished && (
-            <ShareMatchButton text={formatMatchForWhatsApp(match, champ)} />
+          {isKnockout && tied && (
+            <button
+              className={`btn btn-sm ${showPens ? "btn-primary" : "btn-ghost"}`}
+              onClick={() => setShowPens((v) => !v)}
+            >
+              🥅 Pênaltis
+            </button>
           )}
           <button
-            className={`btn btn-sm ${match.finished ? "btn-ghost" : "btn-primary"} ml-auto`}
+            className="btn btn-primary btn-sm ml-auto"
             onClick={toggleFinished}
-            disabled={pending || (!match.finished && isKnockout && !decided)}
+            disabled={pending || (isKnockout && !decided)}
             title={
-              !match.finished && isKnockout && !decided
+              isKnockout && !decided
                 ? "Defina o vencedor (gols ou pênaltis)"
                 : undefined
             }
           >
-            {match.finished ? "Reabrir" : "Encerrar partida"}
+            Encerrar partida
           </button>
         </div>
       )}

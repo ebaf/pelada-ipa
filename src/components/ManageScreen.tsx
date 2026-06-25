@@ -134,6 +134,7 @@ export function ManageScreen({
                 champ={championship}
                 isActive={activeMatchId === m.id}
                 onActivate={() => setActiveMatchId(m.id)}
+                onClose={() => setActiveMatchId(null)}
               />
             ))}
           </div>
@@ -236,6 +237,7 @@ export function ManageScreen({
                 champ={championship}
                 isActive={activeKnockoutId === sf1.id}
                 onActivate={() => setActiveKnockoutId(sf1.id)}
+                onClose={() => setActiveKnockoutId(null)}
               />
             )}
             {sf2 && (
@@ -247,6 +249,7 @@ export function ManageScreen({
                 champ={championship}
                 isActive={activeKnockoutId === sf2.id}
                 onActivate={() => setActiveKnockoutId(sf2.id)}
+                onClose={() => setActiveKnockoutId(null)}
               />
             )}
           </div>
@@ -277,6 +280,7 @@ export function ManageScreen({
                   champ={championship}
                   isActive={activeKnockoutId === third.id}
                   onActivate={() => setActiveKnockoutId(third.id)}
+                  onClose={() => setActiveKnockoutId(null)}
                 />
               )}
               {final && (
@@ -288,6 +292,7 @@ export function ManageScreen({
                   champ={championship}
                   isActive={activeKnockoutId === final.id}
                   onActivate={() => setActiveKnockoutId(final.id)}
+                  onClose={() => setActiveKnockoutId(null)}
                 />
               )}
             </div>
