@@ -26,12 +26,16 @@ export function MatchEditor({
   awayMembers,
   allPlayers,
   champ,
+  isActive,
+  onActivate,
 }: {
   match: MatchView;
   homeMembers: Member[];
   awayMembers: Member[];
   allPlayers: Member[];
   champ: { name: string | null; date: Date | string };
+  isActive?: boolean;
+  onActivate?: () => void;
 }) {
   const router = useRouter();
   const [pending, start] = useTransition();
@@ -231,6 +235,37 @@ export function MatchEditor({
 
   const benefitLabel = side === "home" ? match.homeLabel : match.awayLabel;
   const concedeLabel = side === "home" ? match.awayLabel : match.homeLabel;
+
+  if (isActive === false) {
+    return (
+      <button
+        onClick={onActivate}
+        className="card w-full p-3 text-left opacity-50 transition-opacity hover:opacity-100"
+      >
+        <div className="flex items-center gap-2">
+          <span className="chip shrink-0 text-xs">
+            {isKnockout ? STAGE_LABEL[match.stage] : `Rodada ${match.round}`}
+          </span>
+          <div className="flex flex-1 items-center justify-center gap-2">
+            <span className="flex items-center gap-1 text-sm font-semibold">
+              Time {match.homeLabel}
+              <TeamBadge label={match.homeLabel} className="!h-5 !w-5 text-[10px]" />
+            </span>
+            <span className="rounded-md bg-bg px-2 py-0.5 text-base font-extrabold tabular-nums">
+              {match.homeScore} : {match.awayScore}
+            </span>
+            <span className="flex items-center gap-1 text-sm font-semibold">
+              <TeamBadge label={match.awayLabel} className="!h-5 !w-5 text-[10px]" />
+              Time {match.awayLabel}
+            </span>
+          </div>
+          {match.finished && (
+            <span className="chip shrink-0 border-primary/40 text-primary text-xs">✓</span>
+          )}
+        </div>
+      </button>
+    );
+  }
 
   return (
     <div className={`card p-4 ${match.finished ? "" : "border-dashed"}`}>
