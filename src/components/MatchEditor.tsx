@@ -20,6 +20,93 @@ import { formatMatchForWhatsApp } from "@/lib/share";
 type Member = { id: string; name: string };
 type MemberWithFlag = Member & { isExternal: boolean };
 
+function PlayerPicker({
+  options,
+  value,
+  onChange,
+  emptyLabel,
+}: {
+  options: MemberWithFlag[];
+  value: string;
+  onChange: (v: string) => void;
+  emptyLabel: string;
+}) {
+  const [open, setOpen] = useState(false);
+  const selected = options.find((m) => m.id === value) ?? null;
+  const team = options.filter((m) => !m.isExternal);
+  const ext = options.filter((m) => m.isExternal);
+
+  function pick(id: string) {
+    onChange(id);
+    setOpen(false);
+  }
+
+  return (
+    <div>
+      {selected ? (
+        <span className="inline-flex items-center gap-1.5 rounded-full bg-surface-2 px-2.5 py-1 text-sm">
+          {selected.name}
+          <button
+            type="button"
+            onClick={() => { onChange(""); setOpen(false); }}
+            className="text-muted hover:text-danger"
+            aria-label="Remover"
+          >
+            ✕
+          </button>
+        </span>
+      ) : (
+        <button
+          type="button"
+          className="btn btn-ghost btn-sm w-full"
+          onClick={() => setOpen((v) => !v)}
+        >
+          {open ? "Fechar" : `+ ${emptyLabel}`}
+        </button>
+      )}
+
+      {!selected && open && (
+        <div className="mt-1.5 divide-y divide-border rounded-lg border border-border">
+          {team.map((m) => (
+            <button
+              key={m.id}
+              type="button"
+              onClick={() => pick(m.id)}
+              className="flex w-full items-center px-3 py-2.5 text-sm hover:bg-surface-2 active:bg-surface-2 first:rounded-t-lg last:rounded-b-lg"
+            >
+              <span className="mr-2 text-muted">+</span>
+              {m.name}
+            </button>
+          ))}
+          {ext.length > 0 && (
+            <>
+              <div className="px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wide text-muted">
+                Externos
+              </div>
+              {ext.map((m) => (
+                <button
+                  key={m.id}
+                  type="button"
+                  onClick={() => pick(m.id)}
+                  className="flex w-full items-center px-3 py-2.5 text-sm hover:bg-surface-2 active:bg-surface-2 first:rounded-t-lg last:rounded-b-lg"
+                >
+                  <span className="mr-2 text-muted">+</span>
+                  {m.name}
+                </button>
+              ))}
+            </>
+          )}
+          {options.length === 0 && (
+            <div className="px-3 py-2.5 text-sm italic text-muted">
+              Nenhum jogador disponível.
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export function MatchEditor({
   match,
   homeMembers,
@@ -195,47 +282,6 @@ export function MatchEditor({
       await removeMatchPlayer(match.id, playerId);
       router.refresh();
     });
-  }
-
-  // Renderiza um <select> com optgroups: membros do time primeiro, externos depois
-  function ScorerSelect({
-    options,
-    teamLabel,
-    value,
-    onChange,
-    emptyLabel,
-  }: {
-    options: MemberWithFlag[];
-    teamLabel: string;
-    value: string;
-    onChange: (v: string) => void;
-    emptyLabel: string;
-  }) {
-    const team = options.filter((m) => !m.isExternal);
-    const ext = options.filter((m) => m.isExternal);
-    return (
-      <select className="select" value={value} onChange={(e) => onChange(e.target.value)}>
-        <option value="">{emptyLabel}</option>
-        {team.length > 0 && (
-          <optgroup label={`Time ${teamLabel}`}>
-            {team.map((m) => (
-              <option key={m.id} value={m.id}>
-                {m.name}
-              </option>
-            ))}
-          </optgroup>
-        )}
-        {ext.length > 0 && (
-          <optgroup label="Externos">
-            {ext.map((m) => (
-              <option key={m.id} value={m.id}>
-                {m.name}
-              </option>
-            ))}
-          </optgroup>
-        )}
-      </select>
-    );
   }
 
   const benefitLabel = side === "home" ? match.homeLabel : match.awayLabel;
@@ -452,24 +498,22 @@ export function MatchEditor({
             <div className="label">
               {isOwnGoal ? "Autor (gol contra)" : "Autor do gol"}
             </div>
-            <ScorerSelect
+            <PlayerPicker
               options={scorerOptions}
-              teamLabel={isOwnGoal ? concedeLabel : benefitLabel}
               value={scorerId}
               onChange={setScorerId}
-              emptyLabel="— sem autor —"
+              emptyLabel="sem autor"
             />
           </div>
 
           {!isOwnGoal && (
             <div>
               <div className="label">Assistência (opcional)</div>
-              <ScorerSelect
+              <PlayerPicker
                 options={benefitMembers.filter((m) => m.id !== scorerId)}
-                teamLabel={benefitLabel}
                 value={assistId}
                 onChange={setAssistId}
-                emptyLabel="— sem assistência —"
+                emptyLabel="sem assistência"
               />
             </div>
           )}
