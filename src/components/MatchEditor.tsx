@@ -25,20 +25,39 @@ function PlayerPicker({
   value,
   onChange,
   emptyLabel,
+  availableExternals = [],
+  onAddExternal,
 }: {
   options: MemberWithFlag[];
   value: string;
   onChange: (v: string) => void;
   emptyLabel: string;
+  availableExternals?: Member[];
+  onAddExternal?: (id: string) => void;
 }) {
   const [open, setOpen] = useState(false);
-  const selected = options.find((m) => m.id === value) ?? null;
+  const [showExternals, setShowExternals] = useState(false);
+  // Optimistic chip: if value isn't in options yet (external just added, pending refresh),
+  // fall back to availableExternals so the chip shows immediately.
+  const selected =
+    options.find((m) => m.id === value) ??
+    (availableExternals.find((m) => m.id === value)
+      ? { id: value, name: availableExternals.find((m) => m.id === value)!.name, isExternal: true }
+      : null);
   const team = options.filter((m) => !m.isExternal);
   const ext = options.filter((m) => m.isExternal);
 
   function pick(id: string) {
     onChange(id);
     setOpen(false);
+    setShowExternals(false);
+  }
+
+  function pickExternal(id: string) {
+    onChange(id);
+    onAddExternal?.(id);
+    setOpen(false);
+    setShowExternals(false);
   }
 
   return (
@@ -46,6 +65,7 @@ function PlayerPicker({
       {selected ? (
         <span className="inline-flex items-center gap-1.5 rounded-full bg-surface-2 px-2.5 py-1 text-sm">
           {selected.name}
+          {selected.isExternal && <span className="text-[10px] text-muted">ext</span>}
           <button
             type="button"
             onClick={() => { onChange(""); setOpen(false); }}
@@ -96,7 +116,30 @@ function PlayerPicker({
               ))}
             </>
           )}
-          {options.length === 0 && (
+          {availableExternals.length > 0 && (
+            <>
+              <button
+                type="button"
+                onClick={() => setShowExternals((v) => !v)}
+                className="flex w-full items-center justify-between px-3 py-2 text-[11px] font-semibold uppercase tracking-wide text-muted hover:bg-surface-2"
+              >
+                Adicionar externo
+                <span>{showExternals ? "▲" : "▼"}</span>
+              </button>
+              {showExternals && availableExternals.map((m) => (
+                <button
+                  key={m.id}
+                  type="button"
+                  onClick={() => pickExternal(m.id)}
+                  className="flex w-full items-center px-3 py-2.5 text-sm hover:bg-surface-2 active:bg-surface-2 last:rounded-b-lg"
+                >
+                  <span className="mr-2 text-muted">+</span>
+                  {m.name}
+                </button>
+              ))}
+            </>
+          )}
+          {options.length === 0 && availableExternals.length === 0 && (
             <div className="px-3 py-2.5 text-sm italic text-muted">
               Nenhum jogador disponível.
             </div>
@@ -142,11 +185,6 @@ export function MatchEditor({
   const [showPens, setShowPens] = useState(match.homePens !== null);
   const [hp, setHp] = useState(match.homePens?.toString() ?? "");
   const [ap, setAp] = useState(match.awayPens?.toString() ?? "");
-
-  // --- estado do formulário de externo ---
-  const [showExtForm, setShowExtForm] = useState(false);
-  const [extPlayerId, setExtPlayerId] = useState("");
-  const [extSide, setExtSide] = useState<"home" | "away">("home");
 
   const isKnockout = match.stage !== "GROUP";
   const tied = match.homeScore === match.awayScore;
@@ -197,7 +235,6 @@ export function MatchEditor({
     setSide("home");
     resetForm();
     setShowForm(true);
-    setShowExtForm(false);
   }
 
   function openEdit(g: GoalView) {
@@ -208,20 +245,12 @@ export function MatchEditor({
     setScorerId(g.scorerId ?? "");
     setAssistId(g.assistId ?? "");
     setShowForm(true);
-    setShowExtForm(false);
   }
 
   function closeForm() {
     setShowForm(false);
     setEditingId(null);
     resetForm();
-  }
-
-  function openExtForm() {
-    setExtPlayerId("");
-    setExtSide("home");
-    setShowExtForm(true);
-    setShowForm(false);
   }
 
   function submitGoal() {
@@ -267,12 +296,9 @@ export function MatchEditor({
     });
   }
 
-  function submitExternal() {
-    if (!extPlayerId) return;
-    const teamId = extSide === "home" ? match.homeTeamId : match.awayTeamId;
+  function addExternal(playerId: string, teamId: string) {
     start(async () => {
-      await addMatchPlayer(match.id, extPlayerId, teamId);
-      setShowExtForm(false);
+      await addMatchPlayer(match.id, playerId, teamId);
       router.refresh();
     });
   }
@@ -286,6 +312,9 @@ export function MatchEditor({
 
   const benefitLabel = side === "home" ? match.homeLabel : match.awayLabel;
   const concedeLabel = side === "home" ? match.awayLabel : match.homeLabel;
+  const benefitTeamId = side === "home" ? match.homeTeamId : match.awayTeamId;
+  const concedeTeamId = side === "home" ? match.awayTeamId : match.homeTeamId;
+  const scorerTeamId = isOwnGoal ? concedeTeamId : benefitTeamId;
 
   if (isActive === false) {
     return (
@@ -503,6 +532,8 @@ export function MatchEditor({
               value={scorerId}
               onChange={setScorerId}
               emptyLabel="sem autor"
+              availableExternals={availableExternals}
+              onAddExternal={(id) => addExternal(id, scorerTeamId)}
             />
           </div>
 
@@ -514,6 +545,8 @@ export function MatchEditor({
                 value={assistId}
                 onChange={setAssistId}
                 emptyLabel="sem assistência"
+                availableExternals={availableExternals.filter((p) => p.id !== scorerId)}
+                onAddExternal={(id) => addExternal(id, benefitTeamId)}
               />
             </div>
           )}
@@ -527,62 +560,10 @@ export function MatchEditor({
             </button>
           </div>
         </div>
-      ) : showExtForm ? (
-        /* Formulário de jogador externo */
-        <div className="mt-3 card-2 space-y-3 p-3">
-          <div className="text-sm font-bold">👤 Jogador externo / substituto</div>
-
-          <div>
-            <div className="label">Jogador</div>
-            <select
-              className="select"
-              value={extPlayerId}
-              onChange={(e) => setExtPlayerId(e.target.value)}
-            >
-              <option value="">— selecione —</option>
-              {availableExternals.map((p) => (
-                <option key={p.id} value={p.id}>
-                  {p.name}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          <div>
-            <div className="label">Joga pelo time</div>
-            <div className="grid grid-cols-2 gap-2">
-              {(["home", "away"] as const).map((s) => (
-                <button
-                  key={s}
-                  onClick={() => setExtSide(s)}
-                  className={`btn btn-sm ${extSide === s ? "btn-primary" : "btn-ghost"}`}
-                >
-                  Time {s === "home" ? match.homeLabel : match.awayLabel}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <div className="flex gap-2">
-            <button
-              className="btn btn-primary flex-1"
-              onClick={submitExternal}
-              disabled={pending || !extPlayerId}
-            >
-              Adicionar
-            </button>
-            <button className="btn btn-ghost" onClick={() => setShowExtForm(false)}>
-              Cancelar
-            </button>
-          </div>
-        </div>
       ) : (
         <div className="mt-3 flex flex-wrap gap-2">
           <button className="btn btn-ghost btn-sm" onClick={openAdd} disabled={pending}>
             ⚽
-          </button>
-          <button className="btn btn-ghost btn-sm" onClick={openExtForm} disabled={pending}>
-            👤
           </button>
           {isKnockout && tied && (
             <button
